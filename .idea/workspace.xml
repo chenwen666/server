@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c99a5b04-2737-4985-8e89-5f5759c97dbc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/logger.js" afterPath="$PROJECT_DIR$/util/logger.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/access.log-2014-10-21" afterPath="$PROJECT_DIR$/logs/access.log-2014-10-21" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/friendRoute.js" afterPath="$PROJECT_DIR$/routes/friendRoute.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/requestUtils.js" afterPath="$PROJECT_DIR$/util/requestUtils.js" />
     </list>
     <ignored path="server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,11 +37,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logger.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="logger.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/logger.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19292605" vertical-offset="0" max-vertical-offset="622">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
               <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requestUtils.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/util/requestUtils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.4340836" vertical-offset="630" max-vertical-offset="2355">
+              <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="friendRoute.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/friendRoute.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="4356" max-vertical-offset="4965">
+              <caret line="320" column="24" selection-start-line="320" selection-start-column="24" selection-end-line="320" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -84,6 +105,8 @@
         <option value="$PROJECT_DIR$/util/emailUtils.js" />
         <option value="$PROJECT_DIR$/test/situationTest.js" />
         <option value="$PROJECT_DIR$/util/logger.js" />
+        <option value="$PROJECT_DIR$/routes/friendRoute.js" />
+        <option value="$PROJECT_DIR$/util/requestUtils.js" />
       </list>
     </option>
   </component>
@@ -134,6 +157,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -531,13 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/friendRoute.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1695" max-vertical-offset="4290">
-          <caret line="113" column="36" selection-start-line="113" selection-start-column="36" selection-end-line="113" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/model/AuthLog.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="456">
@@ -626,8 +670,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/util/logger.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19292605" vertical-offset="0" max-vertical-offset="622">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
           <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/friendRoute.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4356" max-vertical-offset="4965">
+          <caret line="320" column="24" selection-start-line="320" selection-start-column="24" selection-end-line="320" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/requestUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.4340836" vertical-offset="630" max-vertical-offset="2355">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
           <folding />
         </state>
       </provider>

@@ -3432,3 +3432,5 @@
 [2014-10-21 15:37:21.212] [INFO] normal - Express server listening on port 3000
 [2014-10-21 15:37:21.219] [INFO] normal - mongodb已连接
 [2014-10-21 15:37:21.229] [INFO] normal - mongodb已连接
+[2014-10-21 17:15:34.388] [INFO] normal - {"code":1100,"msg":"密码错误"}
+[2014-10-21 17:15:39.686] [INFO] normal - {"code":200,"user":{"username":"chenwen","mobile":"18682146542","email":"750912340@qq.com","iconHash":"","nickName":"xiaowenzi","birthday":"chenwen","address":"","lastOpenTime":"Tue Oct 21 2014 15:21:37 GMT+0800 (CST)"},"token":"f4abe6afbf013c5a21e1209d17483f370d742d61709f62cab2c817615e9d6638","refreshToken":"3fcda2536e116004cf35941431cebf019d8351f41be3e683dd259d227302d719","msg":"操作成功"}

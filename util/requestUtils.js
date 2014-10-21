@@ -23,7 +23,8 @@ module.exports.send =function(res, code, data){
     data = data || {};
     data.code = code;
     data.msg = data.msg || getMessage(code);
-    log.info(JSON.stringify(data));
+//    log.info(JSON.stringify(data));
+    console.log(JSON.stringify(data));
     res.send(data);
 }
 /**
