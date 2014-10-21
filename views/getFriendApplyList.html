@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript">
+        /*
+        for(var i=0;i<100000;i++){
+            $.ajax({
+                type : "GET",
+                data :{
+                    token : "3e89de8b78138f0f777e9b662cb2cb4fe0f9d46f067625e3115d30f4b486c202"
+                },
+                success : function(err,data){
+                    console.log("1111111111111111111");
+                }
+            })
+        }
+        */
+    </script>
+</head>
+<body>
+<form action="/friends/request/list" method="get">
+    token : <input type="text" name="token" value="ef8c370995a6db8418991a176dea8857a95da8e94bf32ce19079f0a968d0e6ab"/><br/>
+    pageNo : <input type="text" name="pageNo"><br/>
+    pageEntries:<input type="text" name="pageEntries"/><br/>
+    ctrn : <input type="text" name="ctrn"/><br/>
+    drtn : <input type="text" name="drtn"/><br/>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/helper.js"></script>
+    <script type="text/javascript" src="/javascripts/sha256.js"></script>
+    <script type="text/javascript">
+        function a(){
+            var username = $("#username").val();
+            var password = $("#password").val();
+            var timestrap = new Date().getTime();
+            var redirectURL = "/test/home";
+            var sign = helper.getSign(["username","password","timestrap"],{username:username,password:password,timestrap:timestrap});
+            $("#sign").val(sign);
+            $("#timestrap").val(timestrap);
+            $("#form").submit();
+        }
+    </script>
+</head>
+<body>
+    <form action="/oauth2/login" method="post"  id="form">
+        <input type="text" name="username" id="username"/><br/>
+        <input type="test" name="password" id="password"/><br/>
+        <input type="hidden" name="timestrap" id="timestrap"/>
+        <input type="hidden" name="sign" id="sign"/>
+        <button onclick="a()">确定</button>
+    </form>
+</body>
+</html>

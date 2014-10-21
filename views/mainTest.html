@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/sha256.js"></script>
+    <script type="text/javascript" src="/javascripts/test.js"></script>
+
+    <script type="text/javascript">
+        function jump(){
+            var count = $("#count").val();
+            var time = $("#time").val();
+            var helper = new Helper(count,+time);
+//            helper.authLogin("chenwen","chenwen");
+            helper.search("chenwen","1db5500a69d8297452f68e3f700f4629a0a5d46ffdcfb4e2905a9860d2bcaa60");
+//            helper.refreshToken("a28f900b8f81fd37916c870e32c874ee8be496c273b930faf634b1bf04725323","chenwen");
+            helper.situation("1db5500a69d8297452f68e3f700f4629a0a5d46ffdcfb4e2905a9860d2bcaa60","00:11:71:FB:13:31");
+            helper.friendList("1db5500a69d8297452f68e3f700f4629a0a5d46ffdcfb4e2905a9860d2bcaa60");
+        }
+    </script>
+</head>
+<body>
+    请求间隔(毫秒):<input type="text" value="10" id="time"><br/>
+    执行次数:<input type="text" value="1" id="count"><br/>
+    <input type="button" value="提交" onclick="jump()"><br/>
+    <table>
+        <tr>
+            <td>请求类型</td>
+            <td>成功数</td>
+            <td>失败数</td>
+            <td>总耗时(s)</td>
+        </tr>
+        <tr>
+            <td>登录</td>
+            <td id="loginAccessCount">0</td>
+            <td id="loginErrorCount">0</td>
+            <td id="loginTime">0</td>
+        </tr>
+        <tr>
+            <td>用户搜索</td>
+            <td id="searchAccessCount">0</td>
+            <td id="searchErrorCount">0</td>
+            <td id="searchTime">0</td>
+        </tr>
+        <tr>
+            <td>刷新token</td>
+            <td id="refreshAccessCount">0</td>
+            <td id="refreshErrorCount">0</td>
+            <td id="refreshTime">0</td>
+        </tr>
+        <tr>
+            <td>获取场景数据</td>
+            <td id="situationAccessCount">0</td>
+            <td id="situationErrorCount">0</td>
+            <td id="situationTime">0</td>
+        </tr>
+        <tr>
+            <td>获取好友列表</td>
+            <td id="friendListAccessCount">0</td>
+            <td id="friendListErrorCount">0</td>
+            <td id="friendListTime">0</td>
+        </tr>
+    </table>
+</body>
+</html>
