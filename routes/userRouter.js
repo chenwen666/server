@@ -14,8 +14,9 @@ var fs = require("fs");
 var async = require("async");
 var auth = require("./auth/auth");
 var logFilter = require("./auth/logFilter");
+var sign = require("./auth/sign");
 
-router.post("/regist",auth.registAuth(["username","password","nickName"]),regist);
+router.post("/regist",sign({username:true,password:true,timestrap:true,nickName:true,email:false,mobile:false}),regist);
 
 router.post("/email/auth",auth.registAuth(["username","email"]),emailAuth);
 
@@ -36,14 +37,19 @@ router.post("/portrait",auth.friendAuth(),setPortrait);
  * @param res
  */
 function regist(req, res){
-    var body = req.body;
-    userService.regist(body,function(err, code){
-        if(code == Code.SYSTEM_ERROR){
-            log.error(body.username+"注册失败:"+err.stack);
-            return requestUtils.send(res, Code.SYSTEM_ERROR)
-        }
-        requestUtils.send(res, code);
-    })
+    try {
+        var body = req.body;
+        userService.regist(body, function (err, code) {
+            if (code == Code.SYSTEM_ERROR) {
+                log.error(body.username + "注册失败:" + err.stack);
+                return requestUtils.send(res, Code.SYSTEM_ERROR);
+            }
+            requestUtils.send(res, code);
+        })
+    }catch(err){
+        log.error("userRouter.regist error:"+err.stack);
+        requestUtils.send(req, Code.SYSTEM_ERROR);
+    }
 }
 
 /**
@@ -53,15 +59,20 @@ function regist(req, res){
  * @param next
  */
 function setNickName(req, res, next){
-    var username = req.session.user.u;
-    var nickName = req.body.nickName;
-    userService.setNickName({username:username,nickName:nickName}, function(err){
-        if(err){
-            log.error(req.session.user.u+"修改昵称失败:"+err.stack);
-            return requestUtils.send(res, Code.SYSTEM_ERROR)
-        }
-        requestUtils.send(res, Code.OK);
-    });
+    try {
+        var username = req.session.user.u;
+        var nickName = req.body.nickName;
+        userService.setNickName({username: username, nickName: nickName}, function (err) {
+            if (err) {
+                log.error(req.session.user.u + "修改昵称失败:" + err.stack);
+                return requestUtils.send(res, Code.SYSTEM_ERROR)
+            }
+            requestUtils.send(res, Code.OK);
+        });
+    }catch(err){
+        log.error("userRouter.setnickName error:"+err.stack);
+        requestUtils.send(req, Code.SYSTEM_ERROR);
+    }
 }
 
 /**
@@ -71,15 +82,20 @@ function setNickName(req, res, next){
  * @param next
  */
 function setPassword(req, res, next){
-    var username = req.session.user.u;
-    var password = req.body.password;
-    userService.setPassword({username : username, password : password}, function(err){
-        if(err){
-            log.error(req.session.user.u+"修改密码失败:"+err.stack);
-            return requestUtils.send(res, Code.SYSTEM_ERROR)
-        }
-        requestUtils.send(res, Code.OK);
-    });
+    try {
+        var username = req.session.user.u;
+        var password = req.body.password;
+        userService.setPassword({username: username, password: password}, function (err) {
+            if (err) {
+                log.error(req.session.user.u + "修改密码失败:" + err.stack);
+                return requestUtils.send(res, Code.SYSTEM_ERROR)
+            }
+            requestUtils.send(res, Code.OK);
+        });
+    }catch (err){
+        log.error("userRouter.setPassword error:"+err.stack);
+        requestUtils.send(req, Code.SYSTEM_ERROR);
+    }
 }
 /**
  * 邮箱验证
@@ -97,14 +113,19 @@ function emailAuth(req, res, next){
  * @param next
  */
 function sendEmail(req, res, next){
-    var username = req.body.username;
-    userService.sendEmail(username,function(err, code){
-        if(err){
-            log.error(req.session.user.u+"发送邮件失败:"+err.stack);
-            return requestUtils.send(res, Code.SYSTEM_ERROR)
-        }
-        requestUtils.send(res, code)
-    });
+    try {
+        var username = req.body.username;
+        userService.sendEmail(username, function (err, code) {
+            if (err) {
+                log.error(req.session.user.u + "发送邮件失败:" + err.stack);
+                return requestUtils.send(res, Code.SYSTEM_ERROR)
+            }
+            requestUtils.send(res, code)
+        });
+    }catch(err){
+        log.error("userRouter.sendEmail error:"+err.stack);
+        requestUtils.send(req, Code.SYSTEM_ERROR);
+    }
 }
 /**
  * 更改头像
@@ -113,24 +134,29 @@ function sendEmail(req, res, next){
  * @param next
  */
 function setPortrait(req, res, next){
-    var username = req.session.user.u;
-    var tmpPath = req.files.file.path;
-    var suffix = req.files.file.name.replace(/([^\.]+)/,function(reg){
-        return username;
-    });
-    var targetPath ='public/images/' +suffix ;
-    async.waterfall([function(callback){
-        fs.rename(tmpPath, targetPath,function(err){
-            callback(err);
+    try {
+        var username = req.session.user.u;
+        var tmpPath = req.files.file.path;
+        var suffix = req.files.file.name.replace(/([^\.]+)/, function (reg) {
+            return username;
         });
-    },function(callback){
-        userService.setPortrait(username,"/images/"+suffix,callback);
-    }],function(err){
-        if(err){
-            log.error(req.session.user.u+"设置头像失败:"+err.stack);
-            return requestUtils.send(res, Code.SYSTEM_ERROR);
-        }
-        requestUtils.send(res, Code.OK);
-    })
+        var targetPath = 'public/images/' + suffix;
+        async.waterfall([function (callback) {
+            fs.rename(tmpPath, targetPath, function (err) {
+                callback(err);
+            });
+        }, function (callback) {
+            userService.setPortrait(username, "/images/" + suffix, callback);
+        }], function (err) {
+            if (err) {
+                log.error(req.session.user.u + "设置头像失败:" + err.stack);
+                return requestUtils.send(res, Code.SYSTEM_ERROR);
+            }
+            requestUtils.send(res, Code.OK);
+        })
+    }catch(err){
+        log.error("userRouter.setPortrait error:"+err.stack);
+        requestUtils.send(req, Code.SYSTEM_ERROR);
+    }
 }
 module.exports = router;

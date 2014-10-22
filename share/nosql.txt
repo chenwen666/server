@@ -1,5 +1,6 @@
 <-----------------  chenwen by 2014/9/22  start------------------->
 db.situations.ensureIndex({"ds.di":1});  //场景设备ID索引
+db.devs.ensureIndex({"id":1})  //devs id index
 db.users.ensureIndex({u:1});               //用户名索引
 
 db.users.ensureIndex({lt:-1});   //用户最后更新时间索引

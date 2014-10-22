@@ -65,14 +65,11 @@ if (app.get('env') === 'development') {
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-    res.send({code:Code.SYSTEM_ERROR,msg :"系统错误"});
-    /*
      res.status(err.status || 500);
      res.render('error', {
      message: err.message,
      error: {}
      });
-     */
 });
 var server = app.listen(3001, function() {
     log.info('Express server listening on port ' + server.address().port);

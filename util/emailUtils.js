@@ -35,11 +35,10 @@ emailUtils.send = function(email,subject,content,cb) {
 		transport.sendMail(message, function(err){
 			if(err){
 				log.error('Send mail error occured %s',err.stack);
-				return cb(err);
 			}
 			log.info('Message sent successfully!');
-			cb(null);
 		});
+        cb();
 	} catch(e) {
 		log.error('邮件发送失败 %s', e.stack)
 		cb(e);

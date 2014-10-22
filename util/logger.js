@@ -5,7 +5,7 @@
 var log4js = require('log4js');
 log4js.configure({
     appenders: [
-//        { type: 'console' },
+        { type: 'console' },
         {
             type: 'dateFile',
             absolute: true,

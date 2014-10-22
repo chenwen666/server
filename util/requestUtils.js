@@ -23,8 +23,8 @@ module.exports.send =function(res, code, data){
     data = data || {};
     data.code = code;
     data.msg = data.msg || getMessage(code);
-//    log.info(JSON.stringify(data));
-    console.log(JSON.stringify(data));
+    log.info(JSON.stringify(data));
+//    console.log(JSON.stringify(data));
     res.send(data);
 }
 /**
@@ -52,11 +52,13 @@ module.exports.getSign = function(args, msg){
     for(var i= 0,l=paramNameAndValueArray.length; i<l; i++) {
         signValue += paramNameAndValueArray[i];
     }
+//    log.info('qianmingqian:'+signValue);
     //首尾加上秘钥
     signValue = SystemConfig.SECRET + signValue + SystemConfig.SECRET;
     signValue = encodeURIComponent(signValue);
 
     signValue = crypto.createHash('sha256').update(signValue).digest('hex').toUpperCase();
+//    log.info("qianminghou:"+signValue);
     return signValue;
 }
 /**
@@ -143,7 +145,7 @@ function getMessage(code){
         case Code.CONNECTION.NOT_BUILD : return "连接未建立";
         case Code.USERS.NOT_EXIST : return "用户不存在";
         case Code.FRIEND.NOT_EXIST : return "好友不存在";
-        case Code.USERS.USERNAME_ALREADY_REGIST : return "用户已注册";
+        case Code.USERS.USERNAME_ALREADY_REGIST : return "用户已注册";r
         case Code.USERS.EMAIL_EXIST : return "邮箱被占用";
         case Code.USERS.MOBILE_EXIST : return "手机号被占用";
         case Code.USERS.EMAIL_NOT_BIND : return "未绑定邮箱"

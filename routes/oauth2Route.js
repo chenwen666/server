@@ -8,6 +8,7 @@ var SystemConfig = require("../config/SystemConfig");
 var userService = require("./services/userService");
 var auth = require("./auth/auth");
 var logFilter = require("./auth/logFilter");
+var sign = require("./auth/sign");
 /* GET users listing. */
 
 router.post("/login",before({username:true,password:true,timestrap:true,redirectURL:false,scope:false}),logFilter.logBefore(logFilter.TYPE.LOGIN),login);
@@ -73,8 +74,6 @@ function createToken(req, res){
     try{
         var msg = utils.validateParameters(req.body,["refreshToken","username"]);
         if(msg) return requestUtils.send(res, Code.MISSING_PARAMTER, msg);
-//        console.log(req.headers);
-//        console.log(req.sessionID);
         userService.createToken(req.body,function(err, data){
             if(err) return requestUtils.send(res, Code.SYSTEM_ERROR);
             if(!data.code){

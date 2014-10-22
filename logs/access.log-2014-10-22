@@ -1,0 +1,355 @@
+[2014-10-22 09:27:13.596] [INFO] normal - SMTP Configured
+[2014-10-22 09:27:13.589] [INFO] normal - SMTP Configured
+[2014-10-22 09:27:13.592] [INFO] normal - SMTP Configured
+[2014-10-22 09:27:13.595] [INFO] normal - SMTP Configured
+[2014-10-22 09:27:13.935] [INFO] normal - Express server listening on port 3000
+[2014-10-22 09:27:13.937] [INFO] normal - Express server listening on port 3000
+[2014-10-22 09:27:13.935] [INFO] normal - Express server listening on port 3000
+[2014-10-22 09:27:13.940] [INFO] normal - Express server listening on port 3000
+[2014-10-22 09:27:13.963] [INFO] normal - mongodb已连接
+[2014-10-22 09:27:13.966] [INFO] normal - mongodb已连接
+[2014-10-22 09:27:13.968] [INFO] normal - mongodb已连接
+[2014-10-22 09:27:13.976] [INFO] normal - mongodb已连接
+[2014-10-22 10:01:28.328] [INFO] normal - SMTP Configured
+[2014-10-22 10:01:28.452] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:01:28.485] [INFO] normal - mongodb已连接
+[2014-10-22 10:01:28.463] [INFO] normal - SMTP Configured
+[2014-10-22 10:01:28.600] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:01:28.640] [INFO] normal - mongodb已连接
+[2014-10-22 10:01:28.522] [INFO] normal - SMTP Configured
+[2014-10-22 10:01:28.652] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:01:28.678] [INFO] normal - mongodb已连接
+[2014-10-22 10:01:28.736] [INFO] normal - SMTP Configured
+[2014-10-22 10:01:28.807] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:01:28.821] [INFO] normal - mongodb已连接
+[2014-10-22 10:03:45.368] [INFO] normal - SMTP Configured
+[2014-10-22 10:03:45.404] [INFO] normal - SMTP Configured
+[2014-10-22 10:03:45.516] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:03:45.524] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:03:45.552] [INFO] normal - mongodb已连接
+[2014-10-22 10:03:45.427] [INFO] normal - SMTP Configured
+[2014-10-22 10:03:45.557] [INFO] normal - mongodb已连接
+[2014-10-22 10:03:45.555] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:03:45.580] [INFO] normal - mongodb已连接
+[2014-10-22 10:03:45.482] [INFO] normal - SMTP Configured
+[2014-10-22 10:03:45.592] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:03:45.607] [INFO] normal - mongodb已连接
+[2014-10-22 10:03:55.238] [ERROR] normal - chenwen:/registerror:ReferenceError: utils is not defined
+    at /home/chenwen/WebstormProjects/server/routes/auth/sign.js:12:23
+    at Layer.handle [as handle_request] (/home/chenwen/WebstormProjects/server/node_modules/express/lib/router/layer.js:76:5)
+    at next (/home/chenwen/WebstormProjects/server/node_modules/express/lib/router/route.js:100:13)
+    at Route.dispatch (/home/chenwen/WebstormProjects/server/node_modules/express/lib/router/route.js:81:3)
+    at Layer.handle [as handle_request] (/home/chenwen/WebstormProjects/server/node_modules/express/lib/router/layer.js:76:5)
+    at /home/chenwen/WebstormProjects/server/node_modules/express/lib/router/index.js:227:24
+    at Function.proto.process_params (/home/chenwen/WebstormProjects/server/node_modules/express/lib/router/index.js:305:12)
+    at /home/chenwen/WebstormProjects/server/node_modules/express/lib/router/index.js:221:12
+    at Function.match_layer (/home/chenwen/WebstormProjects/server/node_modules/express/lib/router/index.js:288:3)
+    at next (/home/chenwen/WebstormProjects/server/node_modules/express/lib/router/index.js:182:10)
+[2014-10-22 10:04:16.830] [ERROR] normal - chenwen:/registerror:ReferenceError: utils is not defined
+    at /home/chenwen/WebstormProjects/server/routes/auth/sign.js:12:23
+    at Layer.handle [as handle_request] (/home/chenwen/WebstormProjects/server/node_modules/express/lib/router/layer.js:76:5)
+    at next (/home/chenwen/WebstormProjects/server/node_modules/express/lib/router/route.js:100:13)
+    at Route.dispatch (/home/chenwen/WebstormProjects/server/node_modules/express/lib/router/route.js:81:3)
+    at Layer.handle [as handle_request] (/home/chenwen/WebstormProjects/server/node_modules/express/lib/router/layer.js:76:5)
+    at /home/chenwen/WebstormProjects/server/node_modules/express/lib/router/index.js:227:24
+    at Function.proto.process_params (/home/chenwen/WebstormProjects/server/node_modules/express/lib/router/index.js:305:12)
+    at /home/chenwen/WebstormProjects/server/node_modules/express/lib/router/index.js:221:12
+    at Function.match_layer (/home/chenwen/WebstormProjects/server/node_modules/express/lib/router/index.js:288:3)
+    at next (/home/chenwen/WebstormProjects/server/node_modules/express/lib/router/index.js:182:10)
+[2014-10-22 10:05:36.946] [INFO] normal - SMTP Configured
+[2014-10-22 10:05:37.203] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:05:37.247] [INFO] normal - mongodb已连接
+[2014-10-22 10:05:37.154] [INFO] normal - SMTP Configured
+[2014-10-22 10:05:37.320] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:05:37.362] [INFO] normal - mongodb已连接
+[2014-10-22 10:05:37.332] [INFO] normal - SMTP Configured
+[2014-10-22 10:05:37.431] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:05:37.355] [INFO] normal - SMTP Configured
+[2014-10-22 10:05:37.451] [INFO] normal - mongodb已连接
+[2014-10-22 10:05:37.449] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:05:37.469] [INFO] normal - mongodb已连接
+[2014-10-22 10:14:07.457] [INFO] normal - SMTP Configured
+[2014-10-22 10:14:07.584] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:14:07.615] [INFO] normal - mongodb已连接
+[2014-10-22 10:14:07.648] [INFO] normal - SMTP Configured
+[2014-10-22 10:14:07.787] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:14:07.653] [INFO] normal - SMTP Configured
+[2014-10-22 10:14:07.805] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:14:07.817] [INFO] normal - mongodb已连接
+[2014-10-22 10:14:07.826] [INFO] normal - mongodb已连接
+[2014-10-22 10:14:07.827] [INFO] normal - SMTP Configured
+[2014-10-22 10:14:07.907] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:14:07.915] [INFO] normal - mongodb已连接
+[2014-10-22 10:14:23.355] [INFO] normal - {"msg":"timestrap  is require","code":1000}
+[2014-10-22 10:15:51.700] [INFO] normal - qianmingqian:email33mobile11nickName小文子passwordchenwntimestrap1413944151700usernamechenwen
+[2014-10-22 10:15:51.701] [INFO] normal - qianminghou:02F682A0BA041C57673ECBBD0509BF8DA54F41C60ED7A2628EB8EFA28F2DD87E
+[2014-10-22 10:15:51.701] [INFO] normal - {"code":1040,"msg":"签名错误"}
+[2014-10-22 10:19:07.163] [INFO] normal - qianmingqian:emailddnickName小文passwordchenwentimestrap1413944298259usernamechenwen
+[2014-10-22 10:19:07.163] [INFO] normal - qianminghou:D5738143DB4F62F213AF50F4305360F081F1865A4F01A73F1946FAC55693F477
+[2014-10-22 10:19:07.166] [INFO] normal - {"code":1124,"msg":"用户已注册"}
+[2014-10-22 10:21:10.740] [INFO] normal - SMTP Configured
+[2014-10-22 10:21:10.864] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:21:10.913] [INFO] normal - mongodb已连接
+[2014-10-22 10:21:10.916] [INFO] normal - SMTP Configured
+[2014-10-22 10:21:11.026] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:21:11.048] [INFO] normal - mongodb已连接
+[2014-10-22 10:21:11.074] [INFO] normal - SMTP Configured
+[2014-10-22 10:21:11.160] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:21:11.176] [INFO] normal - mongodb已连接
+[2014-10-22 10:21:11.146] [INFO] normal - SMTP Configured
+[2014-10-22 10:21:11.223] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:21:11.238] [INFO] normal - mongodb已连接
+[2014-10-22 10:23:08.964] [INFO] normal - qianmingqian:emailddnickName小文passwordchenwentimestrap1413944587059usernamechenwen
+[2014-10-22 10:23:08.965] [INFO] normal - qianminghou:F740CFB9B1F8C09EF5D46272A314C44D170B3DDC3E273289DF9EA16790112B9D
+[2014-10-22 10:23:08.968] [INFO] normal - {"code":1124,"msg":"用户已注册"}
+[2014-10-22 10:44:18.378] [INFO] normal - qianmingqian:email11mobile11nickName11passwordchwentimestrap1413945858343usernamechenwen
+[2014-10-22 10:44:18.379] [INFO] normal - qianminghou:FFC84E1718D3970F09C6B70D9E70045FE881015FBB49582707D76242C4CE1B15
+[2014-10-22 10:44:18.380] [INFO] normal - {"code":1040,"msg":"签名错误"}
+[2014-10-22 10:44:22.280] [INFO] normal - qianmingqian:email11nickName11passwordchwentimestrap1413945862270usernamechenwen
+[2014-10-22 10:44:22.282] [INFO] normal - qianminghou:104FF5C125751F3915B5A8976B525E445D03DDCBCE3D8E467449AEDC1F846018
+[2014-10-22 10:44:22.285] [INFO] normal - {"code":1124,"msg":"用户已注册"}
+[2014-10-22 10:46:14.965] [INFO] normal - qianmingqian:email11nickName11passwordchwentimestrap1413945974975usernamechenwen
+[2014-10-22 10:46:14.966] [INFO] normal - qianminghou:E4F679BE15933F73A1E239531DF0347538C462FD1E480F895E8F5A4844865B5A
+[2014-10-22 10:46:14.967] [INFO] normal - {"code":1124,"msg":"用户已注册"}
+[2014-10-22 10:48:05.497] [INFO] normal - SMTP Configured
+[2014-10-22 10:48:05.623] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:48:05.654] [INFO] normal - mongodb已连接
+[2014-10-22 10:48:05.699] [INFO] normal - SMTP Configured
+[2014-10-22 10:48:05.803] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:48:05.703] [INFO] normal - SMTP Configured
+[2014-10-22 10:48:05.811] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:48:05.824] [INFO] normal - mongodb已连接
+[2014-10-22 10:48:05.834] [INFO] normal - mongodb已连接
+[2014-10-22 10:48:05.738] [INFO] normal - SMTP Configured
+[2014-10-22 10:48:05.841] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:48:05.858] [INFO] normal - mongodb已连接
+[2014-10-22 10:48:23.754] [INFO] normal - qianmingqian:email11nickName11passwordchwentimestrap1413946103742usernamechenwen
+[2014-10-22 10:48:23.755] [INFO] normal - qianminghou:957DB4CCE84EC27A26A2138CE6C58AB54A13CE55EE7BDB1AFD8320F57D935B74
+[2014-10-22 10:48:23.755] [INFO] normal - 44444444444444444444444444444444444444444444444
+[2014-10-22 10:48:23.759] [INFO] normal - {"code":1124,"msg":"用户已注册"}
+[2014-10-22 10:51:37.049] [INFO] normal - SMTP Configured
+[2014-10-22 10:51:37.209] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:51:37.234] [INFO] normal - mongodb已连接
+[2014-10-22 10:51:37.293] [INFO] normal - SMTP Configured
+[2014-10-22 10:51:37.395] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:51:37.415] [INFO] normal - mongodb已连接
+[2014-10-22 10:51:37.343] [INFO] normal - SMTP Configured
+[2014-10-22 10:51:37.444] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:51:37.468] [INFO] normal - mongodb已连接
+[2014-10-22 10:51:37.363] [INFO] normal - SMTP Configured
+[2014-10-22 10:51:37.471] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:51:37.486] [INFO] normal - mongodb已连接
+[2014-10-22 10:51:43.494] [INFO] normal - qianmingqian:email11nickName11passwordchwentimestrap1413946303485usernamechenwen
+[2014-10-22 10:51:43.495] [INFO] normal - qianminghou:048F1316A7B63AF3AD6D5805E8B6FD0440AA23F8F4BDED5AD7F6230A08CA227D
+[2014-10-22 10:51:43.495] [INFO] normal - 44444444444444444444444444444444444444444444444
+[2014-10-22 10:51:43.500] [INFO] normal - {"code":1124,"msg":"用户已注册"}
+[2014-10-22 10:52:13.599] [INFO] normal - qianmingqian:email11nickName11passwordchwentimestrap1413946333589usernamechenwen
+[2014-10-22 10:52:13.599] [INFO] normal - qianminghou:E55D62C2EA72C8A09EFE99227C72D3F0B82DA501180E7FC289DC72A651157519
+[2014-10-22 10:52:13.600] [INFO] normal - 44444444444444444444444444444444444444444444444
+[2014-10-22 10:52:13.603] [INFO] normal - {"code":1124,"msg":"用户已注册"}
+[2014-10-22 10:58:31.321] [INFO] normal - SMTP Configured
+[2014-10-22 10:58:31.440] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:58:31.468] [INFO] normal - mongodb已连接
+[2014-10-22 10:58:31.476] [INFO] normal - SMTP Configured
+[2014-10-22 10:58:31.591] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:58:31.611] [INFO] normal - mongodb已连接
+[2014-10-22 10:58:31.539] [INFO] normal - SMTP Configured
+[2014-10-22 10:58:31.641] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:58:31.659] [INFO] normal - mongodb已连接
+[2014-10-22 10:58:31.589] [INFO] normal - SMTP Configured
+[2014-10-22 10:58:31.676] [INFO] normal - Express server listening on port 3000
+[2014-10-22 10:58:31.690] [INFO] normal - mongodb已连接
+[2014-10-22 10:58:42.805] [INFO] normal - qianmingqian:email11nickName11passwordchwentimestrap1413946722800usernamechenwen
+[2014-10-22 10:58:42.805] [INFO] normal - qianminghou:CA1FD04ADA397ED9E895ECCB705B09B1FF427EBBA5C1E7D65958AE665015EA34
+[2014-10-22 10:58:42.806] [INFO] normal - 44444444444444444444444444444444444444444444444
+[2014-10-22 10:58:42.809] [INFO] normal - {"code":1124,"msg":"用户已注册"}
+[2014-10-22 10:59:15.081] [INFO] normal - qianmingqian:passwordchenwentimestrap1413946755094usernamechenwen
+[2014-10-22 10:59:15.082] [INFO] normal - qianminghou:976349F8B24433F698ADFDC7DD03B310F38CCEC6D9E374F249F4E3D5FC2F557C
+[2014-10-22 10:59:15.107] [ERROR] normal - userDao.validateUser update token error:Error: MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist on disk. Commands that may modify the data set are disabled. Please check Redis logs for details about the error.
+    at ReplyParser.<anonymous> (/home/chenwen/WebstormProjects/server/node_modules/redis/index.js:317:31)
+    at ReplyParser.emit (events.js:95:17)
+    at ReplyParser.send_error (/home/chenwen/WebstormProjects/server/node_modules/redis/lib/parser/javascript.js:296:10)
+    at ReplyParser.execute (/home/chenwen/WebstormProjects/server/node_modules/redis/lib/parser/javascript.js:181:22)
+    at RedisClient.on_data (/home/chenwen/WebstormProjects/server/node_modules/redis/index.js:547:27)
+    at Socket.<anonymous> (/home/chenwen/WebstormProjects/server/node_modules/redis/index.js:102:14)
+    at Socket.emit (events.js:95:17)
+    at Socket.<anonymous> (_stream_readable.js:764:14)
+    at Socket.emit (events.js:92:17)
+    at emitReadable_ (_stream_readable.js:426:10)
+[2014-10-22 10:59:15.108] [INFO] normal - {"code":1060,"msg":"系统错误"}
+[2014-10-22 10:59:18.714] [INFO] normal - qianmingqian:passwordchenwentimestrap1413946758716usernamechenwen
+[2014-10-22 10:59:18.715] [INFO] normal - qianminghou:727F3904B662658174309C2DE2E60792F98840114DAB59418781A12B717F7BD5
+[2014-10-22 10:59:18.739] [ERROR] normal - userDao.validateUser update token error:Error: MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist on disk. Commands that may modify the data set are disabled. Please check Redis logs for details about the error.
+    at ReplyParser.<anonymous> (/home/chenwen/WebstormProjects/server/node_modules/redis/index.js:317:31)
+    at ReplyParser.emit (events.js:95:17)
+    at ReplyParser.send_error (/home/chenwen/WebstormProjects/server/node_modules/redis/lib/parser/javascript.js:296:10)
+    at ReplyParser.execute (/home/chenwen/WebstormProjects/server/node_modules/redis/lib/parser/javascript.js:181:22)
+    at RedisClient.on_data (/home/chenwen/WebstormProjects/server/node_modules/redis/index.js:547:27)
+    at Socket.<anonymous> (/home/chenwen/WebstormProjects/server/node_modules/redis/index.js:102:14)
+    at Socket.emit (events.js:95:17)
+    at Socket.<anonymous> (_stream_readable.js:764:14)
+    at Socket.emit (events.js:92:17)
+    at emitReadable_ (_stream_readable.js:426:10)
+[2014-10-22 10:59:18.739] [INFO] normal - {"code":1060,"msg":"系统错误"}
+[2014-10-22 11:01:39.103] [INFO] normal - SMTP Configured
+[2014-10-22 11:01:39.228] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:01:39.125] [INFO] normal - SMTP Configured
+[2014-10-22 11:01:39.239] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:01:39.253] [INFO] normal - mongodb已连接
+[2014-10-22 11:01:39.265] [INFO] normal - mongodb已连接
+[2014-10-22 11:01:39.200] [INFO] normal - SMTP Configured
+[2014-10-22 11:01:39.310] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:01:39.333] [INFO] normal - mongodb已连接
+[2014-10-22 11:01:39.397] [INFO] normal - SMTP Configured
+[2014-10-22 11:01:39.467] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:01:39.482] [INFO] normal - mongodb已连接
+[2014-10-22 11:01:43.492] [INFO] normal - qianmingqian:passwordchenwentimestrap1413946903484usernamechenwen
+[2014-10-22 11:01:43.493] [INFO] normal - qianminghou:CB9C9AB4D653E555D1B7E0F2C6118AD4418274E1981B64CDD7296361A43C8545
+[2014-10-22 11:01:43.512] [ERROR] normal - userDao.validateUser update token error:Error: MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist on disk. Commands that may modify the data set are disabled. Please check Redis logs for details about the error.
+    at ReplyParser.<anonymous> (/home/chenwen/WebstormProjects/server/node_modules/redis/index.js:317:31)
+    at ReplyParser.emit (events.js:95:17)
+    at ReplyParser.send_error (/home/chenwen/WebstormProjects/server/node_modules/redis/lib/parser/javascript.js:296:10)
+    at ReplyParser.execute (/home/chenwen/WebstormProjects/server/node_modules/redis/lib/parser/javascript.js:181:22)
+    at RedisClient.on_data (/home/chenwen/WebstormProjects/server/node_modules/redis/index.js:547:27)
+    at Socket.<anonymous> (/home/chenwen/WebstormProjects/server/node_modules/redis/index.js:102:14)
+    at Socket.emit (events.js:95:17)
+    at Socket.<anonymous> (_stream_readable.js:764:14)
+    at Socket.emit (events.js:92:17)
+    at emitReadable_ (_stream_readable.js:426:10)
+[2014-10-22 11:01:43.513] [INFO] normal - {"code":1060,"msg":"系统错误"}
+[2014-10-22 11:02:06.570] [INFO] normal - qianmingqian:passwordchenwentimestrap1413946926563usernamechenwen
+[2014-10-22 11:02:06.571] [INFO] normal - qianminghou:80BEC21491EBD4DF64DF3AE234FB6B2E1F45C8D4F172937FBD948829F6A22D2E
+[2014-10-22 11:02:06.606] [ERROR] normal - userDao.validateUser update token error:Error: MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist on disk. Commands that may modify the data set are disabled. Please check Redis logs for details about the error.
+    at ReplyParser.<anonymous> (/home/chenwen/WebstormProjects/server/node_modules/redis/index.js:317:31)
+    at ReplyParser.emit (events.js:95:17)
+    at ReplyParser.send_error (/home/chenwen/WebstormProjects/server/node_modules/redis/lib/parser/javascript.js:296:10)
+    at ReplyParser.execute (/home/chenwen/WebstormProjects/server/node_modules/redis/lib/parser/javascript.js:181:22)
+    at RedisClient.on_data (/home/chenwen/WebstormProjects/server/node_modules/redis/index.js:547:27)
+    at Socket.<anonymous> (/home/chenwen/WebstormProjects/server/node_modules/redis/index.js:102:14)
+    at Socket.emit (events.js:95:17)
+    at Socket.<anonymous> (_stream_readable.js:764:14)
+    at Socket.emit (events.js:92:17)
+    at emitReadable_ (_stream_readable.js:426:10)
+[2014-10-22 11:02:06.607] [INFO] normal - {"code":1060,"msg":"系统错误"}
+[2014-10-22 11:02:46.156] [INFO] normal - {"code":1180,"msg":"无效的token"}
+[2014-10-22 11:02:57.245] [INFO] normal - {"code":1180,"msg":"无效的token"}
+[2014-10-22 11:03:01.420] [INFO] normal - {"code":1180,"msg":"无效的token"}
+[2014-10-22 11:05:25.216] [INFO] normal - SMTP Configured
+[2014-10-22 11:05:25.354] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:05:25.380] [INFO] normal - mongodb已连接
+[2014-10-22 11:05:25.281] [INFO] normal - SMTP Configured
+[2014-10-22 11:05:25.412] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:05:25.435] [INFO] normal - mongodb已连接
+[2014-10-22 11:05:25.377] [INFO] normal - SMTP Configured
+[2014-10-22 11:05:25.475] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:05:25.495] [INFO] normal - mongodb已连接
+[2014-10-22 11:05:25.458] [INFO] normal - SMTP Configured
+[2014-10-22 11:05:25.538] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:05:25.554] [INFO] normal - mongodb已连接
+[2014-10-22 11:05:29.758] [INFO] normal - {"code":1180,"msg":"无效的token"}
+[2014-10-22 11:05:43.353] [INFO] normal - {"code":1180,"msg":"无效的token"}
+[2014-10-22 11:09:47.487] [INFO] normal - SMTP Configured
+[2014-10-22 11:09:47.557] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:09:47.571] [INFO] normal - mongodb已连接
+[2014-10-22 11:10:03.205] [INFO] normal - {"code":1180,"msg":"无效的token"}
+[2014-10-22 11:10:59.632] [INFO] normal - SMTP Configured
+[2014-10-22 11:10:59.744] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:10:59.769] [INFO] normal - mongodb已连接
+[2014-10-22 11:10:59.775] [INFO] normal - SMTP Configured
+[2014-10-22 11:10:59.883] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:10:59.926] [INFO] normal - mongodb已连接
+[2014-10-22 11:10:59.960] [INFO] normal - SMTP Configured
+[2014-10-22 11:11:00.079] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:11:00.114] [INFO] normal - mongodb已连接
+[2014-10-22 11:11:00.034] [INFO] normal - SMTP Configured
+[2014-10-22 11:11:00.145] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:11:00.162] [INFO] normal - mongodb已连接
+[2014-10-22 11:11:08.150] [INFO] normal - {"code":1180,"msg":"无效的token"}
+[2014-10-22 11:12:04.746] [INFO] normal - SMTP Configured
+[2014-10-22 11:12:04.889] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:12:04.931] [INFO] normal - mongodb已连接
+[2014-10-22 11:12:04.715] [INFO] normal - SMTP Configured
+[2014-10-22 11:12:04.966] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:12:04.664] [INFO] normal - SMTP Configured
+[2014-10-22 11:12:05.001] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:12:05.009] [INFO] normal - mongodb已连接
+[2014-10-22 11:12:05.030] [INFO] normal - mongodb已连接
+[2014-10-22 11:12:04.877] [INFO] normal - SMTP Configured
+[2014-10-22 11:12:05.054] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:12:05.071] [INFO] normal - mongodb已连接
+[2014-10-22 11:12:19.091] [INFO] normal - {"code":1180,"msg":"无效的token"}
+[2014-10-22 11:13:03.067] [INFO] normal - qianmingqian:emailddmobileddnickNameDDpasswordchenwentimestrap1413947583066usernamechenwen
+[2014-10-22 11:13:03.068] [INFO] normal - qianminghou:4B90D4378339EE28167F46152AA28E4376759E5DFB2EF02D2E04D3F27B4CD9AB
+[2014-10-22 11:13:03.068] [INFO] normal - {"code":1040,"msg":"签名错误"}
+[2014-10-22 11:13:10.215] [INFO] normal - qianmingqian:emailddnickNameDDpasswordchenwentimestrap1413947590233usernamechenwen
+[2014-10-22 11:13:10.216] [INFO] normal - qianminghou:46EB800F1EE191F6AD6D208FD6C50DFCF0B45941A853789A9C99231D694DD6FF
+[2014-10-22 11:13:10.217] [INFO] normal - 44444444444444444444444444444444444444444444444
+[2014-10-22 11:13:10.219] [INFO] normal - {"code":1124,"msg":"用户已注册"}
+[2014-10-22 11:18:35.445] [INFO] normal - qianmingqian:emailddnickNameDDpasswordchenwentimestrap1413947915463usernamechenwen
+[2014-10-22 11:18:35.445] [INFO] normal - qianminghou:44B2D3155C90E1870BCF71494445079298A590A1AE645231E8BB43EF9C881E94
+[2014-10-22 11:18:35.446] [INFO] normal - 44444444444444444444444444444444444444444444444
+[2014-10-22 11:18:35.447] [INFO] normal - {"code":1124,"msg":"用户已注册"}
+[2014-10-22 11:19:36.956] [INFO] normal - SMTP Configured
+[2014-10-22 11:19:37.073] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:19:37.106] [INFO] normal - mongodb已连接
+[2014-10-22 11:19:37.201] [INFO] normal - SMTP Configured
+[2014-10-22 11:19:37.313] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:19:37.334] [INFO] normal - mongodb已连接
+[2014-10-22 11:19:37.230] [INFO] normal - SMTP Configured
+[2014-10-22 11:19:37.237] [INFO] normal - SMTP Configured
+[2014-10-22 11:19:37.339] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:19:37.342] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:19:37.361] [INFO] normal - mongodb已连接
+[2014-10-22 11:19:37.364] [INFO] normal - mongodb已连接
+[2014-10-22 11:19:41.161] [INFO] normal - qianmingqian:emailddnickNameDDpasswordchenwentimestrap1413947981160usernamechenwen
+[2014-10-22 11:19:41.162] [INFO] normal - qianminghou:348EF2B8D2C68F23ED84B59C433287E91A94D4105756ABAA72A9F25B76A37A10
+[2014-10-22 11:19:41.162] [INFO] normal - 44444444444444444444444444444444444444444444444
+[2014-10-22 11:19:41.165] [INFO] normal - {"code":1124,"msg":"用户已注册"}
+[2014-10-22 11:19:55.004] [INFO] normal - qianmingqian:emailddnickNameDDpasswordchenwentimestrap1413947995023usernamechenwen
+[2014-10-22 11:19:55.005] [INFO] normal - qianminghou:FD9DC68C294EB7B6C00C3A881CF5A456B760363BAC17ABA0FD5BDBD25945AB43
+[2014-10-22 11:19:55.005] [INFO] normal - 44444444444444444444444444444444444444444444444
+[2014-10-22 11:19:55.006] [INFO] normal - {"code":1124,"msg":"用户已注册"}
+[2014-10-22 11:21:50.617] [INFO] normal - SMTP Configured
+[2014-10-22 11:21:50.641] [INFO] normal - SMTP Configured
+[2014-10-22 11:21:50.751] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:21:50.754] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:21:50.779] [INFO] normal - mongodb已连接
+[2014-10-22 11:21:50.782] [INFO] normal - mongodb已连接
+[2014-10-22 11:21:50.927] [INFO] normal - SMTP Configured
+[2014-10-22 11:21:51.019] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:21:51.045] [INFO] normal - mongodb已连接
+[2014-10-22 11:21:50.963] [INFO] normal - SMTP Configured
+[2014-10-22 11:21:51.052] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:21:51.070] [INFO] normal - mongodb已连接
+[2014-10-22 11:21:54.365] [INFO] normal - qianmingqian:emailddnickNameDDpasswordchenwentimestrap1413948114367usernamechenwen
+[2014-10-22 11:21:54.366] [INFO] normal - qianminghou:68430E542FF46180B125287B9311D487938DDB03431723A2FD3A693B3A417E42
+[2014-10-22 11:21:54.368] [INFO] normal - {"code":1124,"msg":"用户已注册"}
+[2014-10-22 11:22:06.093] [INFO] normal - qianmingqian:emailddnickNameDDpasswordchenwentimestrap1413948126112usernamechenwen
+[2014-10-22 11:22:06.094] [INFO] normal - qianminghou:A97D27149B8D7B6DA00EA51BDBF49FA9F9B9E096F951C2F881F4E80F00D11CA6
+[2014-10-22 11:22:06.095] [INFO] normal - {"code":1124,"msg":"用户已注册"}
+[2014-10-22 11:29:36.254] [INFO] normal - SMTP Configured
+[2014-10-22 11:29:36.419] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:29:36.456] [INFO] normal - mongodb已连接
+[2014-10-22 11:29:36.477] [INFO] normal - SMTP Configured
+[2014-10-22 11:29:36.641] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:29:36.675] [INFO] normal - mongodb已连接
+[2014-10-22 11:29:36.546] [INFO] normal - SMTP Configured
+[2014-10-22 11:29:36.687] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:29:36.712] [INFO] normal - mongodb已连接
+[2014-10-22 11:29:36.739] [INFO] normal - SMTP Configured
+[2014-10-22 11:29:36.813] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:29:36.826] [INFO] normal - mongodb已连接
+[2014-10-22 11:30:22.640] [INFO] normal - {"code":1124,"msg":"用户已注册"}
+[2014-10-22 11:31:34.203] [INFO] normal - SMTP Configured
+[2014-10-22 11:31:34.442] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:31:34.225] [INFO] normal - SMTP Configured
+[2014-10-22 11:31:34.521] [INFO] normal - mongodb已连接
+[2014-10-22 11:31:34.508] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:31:34.552] [INFO] normal - mongodb已连接
+[2014-10-22 11:31:34.379] [INFO] normal - SMTP Configured
+[2014-10-22 11:31:34.445] [INFO] normal - SMTP Configured
+[2014-10-22 11:31:34.592] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:31:34.624] [INFO] normal - mongodb已连接
+[2014-10-22 11:31:34.626] [INFO] normal - Express server listening on port 3000
+[2014-10-22 11:31:34.638] [INFO] normal - mongodb已连接
+[2014-10-22 12:04:57.848] [INFO] normal - {"code":1124,"msg":"用户已注册"}

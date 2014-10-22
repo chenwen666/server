@@ -2,17 +2,38 @@
 <html>
 <head>
     <title></title>
+    <title></title>
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/helper.js"></script>
+    <script type="text/javascript" src="/javascripts/sha256.js"></script>
+    <script type="text/javascript">
+        function a(){
+            var username = $("#username").val();
+            var password = $("#password").val();
+            var nickName = $("#nickName").val();
+            var email = $("#email").val();
+            var timestrap = new Date().getTime();
+            var redirectURL = "/test/home";
+            var sign = helper.getSign(["username","password","timestrap","email","nickName"],
+                    {username:username,password:password,timestrap:timestrap,email:email,nickName:nickName});
+            $("#sign").val(sign);
+            $("#timestrap").val(timestrap);
+            $("#form").submit();
+        }
+    </script>
 </head>
 <body>
-<form action="/user/regist" method="post">
-    username:<input type="text"name="username" value=""><br/>
-    password : <input type="text" name="password" value=""><br/>
-    email : <input type="text" name="email" value=""><br/>
-    mobile : <input type="text" name="mobile" value=""><br/>
-    nickName : <input type="text" name="nickName" value=""><br/>
-    birthday : <input type="text" name="birthday" value=""><br/>
+<form action="/user/regist" method="post" id="form">
+    username:<input type="text"name="username" value="" id="username"><br/>
+    password : <input type="text" name="password" value="" id="password"><br/>
+    email : <input type="text" name="email" value="" id="email"><br/>
+    mobile : <input type="text" name="mobile" value="" id="mobile"><br/>
+    nickName : <input type="text" name="nickName" value="" id="nickName"><br/>
+    <input type="hidden" name="timestrap" id="timestrap">
+    <input type="hidden" name="sign" value="" id="sign">
+    birthday : <input type="text" name="birthday" value="" id="birthday"><br/>
     <br/>
-    <input type="submit" value="提交"/>
+    <input type="button" value="提交" onclick="a()"/>
 </form>
 </body>
 </html>
