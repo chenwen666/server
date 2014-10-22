@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c99a5b04-2737-4985-8e89-5f5759c97dbc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/emailUtils.js" afterPath="$PROJECT_DIR$/util/emailUtils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friend.js" afterPath="$PROJECT_DIR$/friend.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/logger.js" afterPath="$PROJECT_DIR$/util/logger.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/nosql.txt" afterPath="$PROJECT_DIR$/share/nosql.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/oauth2Route.js" afterPath="$PROJECT_DIR$/routes/oauth2Route.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/requestUtils.js" afterPath="$PROJECT_DIR$/util/requestUtils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/userRegist.html" afterPath="$PROJECT_DIR$/views/userRegist.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/userRouter.js" afterPath="$PROJECT_DIR$/routes/userRouter.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/chenwen" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/chenwen.pub" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="server.iws" />
@@ -57,8 +50,8 @@
       <file leaf-file-name="oauth2Route.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/oauth2Route.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5090909" vertical-offset="905" max-vertical-offset="1455">
-              <caret line="79" column="52" selection-start-line="79" selection-start-column="52" selection-end-line="79" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.6727273" vertical-offset="545" max-vertical-offset="1455">
+              <caret line="61" column="66" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -79,16 +72,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
               <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="525">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="19" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -664,22 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chenwen.pub">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="550">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chenwen">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="563">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/friend.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.2930728" vertical-offset="187" max-vertical-offset="1245">
@@ -760,10 +727,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="563">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/oauth2Route.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5090909" vertical-offset="905" max-vertical-offset="1455">
-          <caret line="79" column="52" selection-start-line="79" selection-start-column="52" selection-end-line="79" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.6727273" vertical-offset="545" max-vertical-offset="1455">
+          <caret line="61" column="66" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
           <folding />
         </state>
       </provider>
