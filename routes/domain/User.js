@@ -34,9 +34,32 @@ User.prototype.buildFormDb = function(opts){
     return this;
 }
 //性别
-User.GENDER_VALUE = {
-    MAN : 0 , //男
-    WOMAN : 1, //女
-    OTHER : 2  //其他
-}
+Object.defineProperty(User,"GENDER_VALUE",{
+    value : {},
+    writable : false,
+    configurable : false,
+    enumerable : true
+})
+
+
+Object.defineProperties(User.GENDER_VALUE,{
+    MAN : {
+        value : 0,//man
+        writable : false,
+        configurable : false,
+        enumerable : true
+    },
+    WOMAN : {
+        value : 1, //woman
+        writable : false,
+        configurable : false,
+        enumerable : true
+    },
+    OTHER : {
+        value : 2, //other
+        writable : false,
+        configurable : false,
+        enumerable : true
+    }
+})
 module.exports = User;

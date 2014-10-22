@@ -38,27 +38,7 @@ handlerApplyDao.insert = function(username,msg,cb){
  * @param page
  * @param cb
  */
-handlerApplyDao.handlerList = function(username, page,ctrn, drtn, cb){
-    var pageNo = +page.pageNo;
-    var pageEntries = +page.pageEntries;
-    var startEntries = (pageNo-1)*pageEntries;
-    /*
-    dbUtils.findPage(UserModel,page,{u:username},{"h":{"$slice":[startEntries, pageEntries]}},function(res){
-        if(!!res && !!res.h) return res.h.length;
-        return 0;
-    },function(list){
-        var content = [];
-        if(!!list && !!list.h){
-            list = list.h;
-            for(var i = 0, l=list.length;i<l;i++){
-                var handlerApply = new HandlerApply();
-                handlerApply.buildFormDb(list[i]);
-                content.push(handlerApply);
-            }
-        }
-        return content;
-    },cb);
-    */
+handlerApplyDao.handlerList = function(username, cb){
     async.waterfall([function(callback){
         UserModel.findOne({u:username},null,function(err, results){
             if(err) return callback(err);
@@ -83,19 +63,10 @@ handlerApplyDao.handlerList = function(username, page,ctrn, drtn, cb){
             if(err){
                 log.error("handlerApplyDao.handlerList error:"+err.stack);
             }
-        })
+        });
         cb(null, list);
     });
 
 }
-/**
- * 标记为已读
- * @param ids
- * @param cb
- */
-handlerApplyDao.markAsRead = function(ids, cb){
-//    HandlerApplyModel.update({_id:{$in:ids}},{r:HandlerApply.STATE.ALREADY_READ},{ multi: true },cb);
-//    UserModel.update();
-    cb();
-}
+
 module.exports = handlerApplyDao;

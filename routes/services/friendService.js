@@ -29,12 +29,12 @@ friendService.search = function(username, applyName,cb){
  */
 friendService.addRequest = function(username, msg, cb){
     var applyName = msg.applyName;
-    var type = +msg.type || 1;
+    var type = +msg.type || FriendApply.TYPE.ADD;
     async.waterfall([function(callback){
         friendDao.search(username,applyName,callback);
     },function(user,callback){
         if(!user) return callback(null,Code.USERS.USERNAME_NOT_EXISTS);
-        if(type == 1){
+        if(type == FriendApply.TYPE.ADD){
             if(user.isFriend)return callback(null, Code.FRIEND.EXIST);
         }
         friendDao.addRequest(username,msg,callback);

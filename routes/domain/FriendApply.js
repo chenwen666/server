@@ -23,15 +23,62 @@ FriendApply.prototype.buildFormDb = function(opts){
     }
     return this;
 }
+
 //是否为好友
-FriendApply.STATE = {
-    NOT_HANDLER : 0, //未处理
-    AGREE :1,    //同意
-    REFUSE : 2,  //拒绝
-    LGNORE : 3   //忽略
-}
-FriendApply.TYPE = {
-    ADD : 1, //添加好友请求
-    LOCATION : 2 //定位请求
-}
+Object.defineProperty(FriendApply,"STATE",{
+    value : {},
+    writable : false,
+    configurable : false,
+    enumerable : true
+})
+Object.defineProperties(FriendApply.STATE,{
+    NOT_HANDLER : {//未处理
+        value : 0,
+        writable : false,
+        configurable : false,
+        enumerable : true
+    },
+    AGREE : { //同意
+        value : 1,
+        writable : false,
+        configurable : false,
+        enumerable : true
+    },
+    REFUSE : { //拒绝
+        value : 2,
+        writable : false,
+        configurable : false,
+        enumerable : true
+    },
+    LGNORE : { //忽略
+        value : 3,
+        writable : false,
+        configurable : false,
+        enumerable : true
+    }
+
+})
+
+
+Object.defineProperty(FriendApply,"TYPE",{
+    value : {},
+    writable : false,
+    configurable : false,
+    enumerable : true
+})
+Object.defineProperties(FriendApply.TYPE,{
+    ADD : {//添加好友请求
+        value : 1,
+        writable : false,
+        configurable : false,
+        enumerable : true
+    },
+    LOCATION : { //定位请求
+        value : 2,
+        writable : false,
+        configurable : false,
+        enumerable : true
+    }
+})
+
 module.exports = FriendApply;

@@ -19,8 +19,5 @@ HandlerApply.prototype.buildFormDb = function(opts){
     }
     return this;
 }
-HandlerApply.STATE = {
-    NO_READ : 0, //未读
-    ALREADY_READ : 1 //已读
-}
+
 module.exports = HandlerApply;

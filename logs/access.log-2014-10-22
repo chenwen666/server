@@ -353,3 +353,29 @@
 [2014-10-22 11:31:34.626] [INFO] normal - Express server listening on port 3000
 [2014-10-22 11:31:34.638] [INFO] normal - mongodb已连接
 [2014-10-22 12:04:57.848] [INFO] normal - {"code":1124,"msg":"用户已注册"}
+[2014-10-22 15:39:00.814] [INFO] normal - SMTP Configured
+[2014-10-22 15:39:00.936] [INFO] normal - Express server listening on port 3000
+[2014-10-22 15:39:00.964] [INFO] normal - mongodb已连接
+[2014-10-22 15:39:00.909] [INFO] normal - SMTP Configured
+[2014-10-22 15:39:01.032] [INFO] normal - Express server listening on port 3000
+[2014-10-22 15:39:01.055] [INFO] normal - mongodb已连接
+[2014-10-22 15:39:01.015] [INFO] normal - SMTP Configured
+[2014-10-22 15:39:01.138] [INFO] normal - Express server listening on port 3000
+[2014-10-22 15:39:01.172] [INFO] normal - mongodb已连接
+[2014-10-22 15:39:01.066] [INFO] normal - SMTP Configured
+[2014-10-22 15:39:01.180] [INFO] normal - Express server listening on port 3000
+[2014-10-22 15:39:01.202] [INFO] normal - mongodb已连接
+[2014-10-22 15:39:17.365] [INFO] normal - {"code":200,"msg":"操作成功"}
+[2014-10-22 15:39:31.870] [INFO] normal - {"code":200,"user":{"username":"1001","mobile":"","email":"dd","nickName":"DD","birthday":""},"token":"56e1a2ce6edab485b0c11ade8c1250e43838fa524b27e8209db250b09f134c9a","refreshToken":"e99e3c541c0834897438e258209a8509cec23086c7a4b9e7f21a1f40d66a01f9","msg":"操作成功"}
+[2014-10-22 15:39:50.371] [INFO] normal - {"code":200,"msg":"操作成功"}
+[2014-10-22 15:39:55.185] [INFO] normal - {"code":200,"msg":"操作成功"}
+[2014-10-22 15:40:06.124] [INFO] normal - {"code":200,"user":{"username":"chenwen","mobile":"18682146542","email":"750912340@qq.com","iconHash":"","nickName":"xiaowenzi","birthday":"chenwen","address":"","lastOpenTime":"Wed Oct 22 2014 09:29:24 GMT+0800 (CST)"},"token":"e968627b892925879ed9b4f7e42312ba60c1330afa98998941363c5ae0af02e1","refreshToken":"3fcda2536e116004cf35941431cebf019d8351f41be3e683dd259d227302d719","msg":"操作成功"}
+[2014-10-22 15:40:15.971] [INFO] normal - {"page":{"pageNo":1,"pageEntries":20,"content":[{"username":"1001","applyTime":"2014-10-22T07:39:50.368Z","msg":"1111","type":1},{"username":"1001","applyTime":"2014-10-22T07:39:55.182Z","msg":"2222","type":2}],"totalElements":2,"totalPages":1},"code":200,"msg":"操作成功"}
+[2014-10-22 15:55:03.753] [INFO] normal - SMTP Configured
+[2014-10-22 15:55:03.822] [INFO] normal - Express server listening on port 3000
+[2014-10-22 15:55:03.839] [INFO] normal - mongodb已连接
+[2014-10-22 15:55:15.671] [INFO] normal - {"page":{"pageNo":1,"pageEntries":20,"content":[{"username":"1001","applyTime":"2014-10-22T07:39:50.368Z","msg":"1111","type":1},{"username":"1001","applyTime":"2014-10-22T07:39:55.182Z","msg":"2222","type":2}],"totalElements":2,"totalPages":1},"code":200,"msg":"操作成功"}
+[2014-10-22 15:55:31.016] [INFO] normal - {"code":200,"msg":"操作成功"}
+[2014-10-22 15:55:44.162] [INFO] normal - {"page":{"pageNo":1,"pageEntries":20,"content":[{"username":"1001","mobile":"","email":"dd","nickName":"DD","birthday":"","lastOpenTime":"Wed Oct 22 2014 15:39:31 GMT+0800 (CST)","addTime":"2014-10-22T07:55:31.012Z"}],"totalElements":1,"totalPages":1},"code":200,"msg":"操作成功"}
+[2014-10-22 15:56:03.245] [INFO] normal - {"code":200,"user":{"username":"1001","mobile":"","email":"dd","iconHash":"","nickName":"DD","birthday":"","address":"","lastOpenTime":"Wed Oct 22 2014 15:39:31 GMT+0800 (CST)"},"token":"cb5e019bfd00519cb8b2b97fc91a093faff4165aa5181fd076655e0ecb4f7e25","refreshToken":"e99e3c541c0834897438e258209a8509cec23086c7a4b9e7f21a1f40d66a01f9","msg":"操作成功"}
+[2014-10-22 15:56:17.967] [INFO] normal - {"content":[{"username":"chenwen","time":"2014/09/22 15:55:31","type":"1","state":"1","locationId":null}],"code":200,"msg":"操作成功"}

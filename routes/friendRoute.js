@@ -33,8 +33,6 @@ router.post("/delete", auth.friendAuth(["delName"]),removeFriend);  //删除好�
 
 router.post("/location/position", auth.friendAuth(["position","id","applyName"]),updatePosition); //更新地理位置
 
-//router.get("/location/position",auth.friendAuth(["id","applyName"]), getPosition); //获取地理位置
-
 router.post("/location/disconnect",auth.friendAuth(["id"]),disconnect); //断开连接
 
 router.post("/message",auth.friendAuth(["applyName","msg"]), sendMessage); //发送消息
@@ -131,7 +129,7 @@ function handlerRequest(req, res, next){
 function handlerList(req, res, next){
     try {
         var username = req.session.user.u;
-        handlerApplyService.handlerList(username, req.query, function (err, content) {
+        handlerApplyService.handlerList(username, function (err, content) {
             if (err) {
                 log.error(username + "获取处理结果列表失败:" + err.stack);
                 return requestUtils.send(res, Code.SYSTEM_ERROR);
