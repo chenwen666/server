@@ -10,17 +10,23 @@
         function jump(){
             var count = $("#count").val();
             var time = $("#time").val();
-            var helper = new Helper(count,+time);
+            var number = $("#number").val();
+            var helper = new Helper(count,+time,number);
+//            helper.regist();
 //            helper.authLogin("chenwen","chenwen");
-            helper.search("chenwen","1db5500a69d8297452f68e3f700f4629a0a5d46ffdcfb4e2905a9860d2bcaa60");
+//            helper.search("chenwen","1db5500a69d8297452f68e3f700f4629a0a5d46ffdcfb4e2905a9860d2bcaa60");
 //            helper.refreshToken("a28f900b8f81fd37916c870e32c874ee8be496c273b930faf634b1bf04725323","chenwen");
-            helper.situation("1db5500a69d8297452f68e3f700f4629a0a5d46ffdcfb4e2905a9860d2bcaa60","00:11:71:FB:13:31");
-            helper.friendList("1db5500a69d8297452f68e3f700f4629a0a5d46ffdcfb4e2905a9860d2bcaa60");
+//            helper.situation("1db5500a69d8297452f68e3f700f4629a0a5d46ffdcfb4e2905a9860d2bcaa60","00:11:71:FB:13:31");
+//            helper.friendList("1db5500a69d8297452f68e3f700f4629a0a5d46ffdcfb4e2905a9860d2bcaa60");
+//              helper.addApply();
+//            helper.applyList();
+            helper.sendMessage();
         }
     </script>
 </head>
 <body>
     请求间隔(毫秒):<input type="text" value="10" id="time"><br/>
+    并发数:<input type="text" value="10" id="number"><br/>
     执行次数:<input type="text" value="1" id="count"><br/>
     <input type="button" value="提交" onclick="jump()"><br/>
     <table>
@@ -29,6 +35,12 @@
             <td>成功数</td>
             <td>失败数</td>
             <td>总耗时(s)</td>
+        </tr>
+        <tr>
+            <td>注册</td>
+            <td id="registAccessCount">0</td>
+            <td id="registErrorCount">0</td>
+            <td id="registTime">0</td>
         </tr>
         <tr>
             <td>登录</td>
@@ -59,6 +71,30 @@
             <td id="friendListAccessCount">0</td>
             <td id="friendListErrorCount">0</td>
             <td id="friendListTime">0</td>
+        </tr>
+        <tr>
+            <td>添加好友申请</td>
+            <td id="addApplyAccessCount">0</td>
+            <td id="addApplyErrorCount">0</td>
+            <td id="addApplyTime">0</td>
+        </tr>
+        <tr>
+            <td>好友申请列表</td>
+            <td id="applyListAccessCount">0</td>
+            <td id="applyListErrorCount">0</td>
+            <td id="applyListTime">0</td>
+        </tr>
+        <tr>
+            <td>发送消息</td>
+            <td id="sendMessageAccessCount">0</td>
+            <td id="sendMessageErrorCount">0</td>
+            <td id="sendMessageTime">0</td>
+        </tr>
+        <tr>
+            <td>消息列表</td>
+            <td id="messageListAccessCount">0</td>
+            <td id="messageListErrorCount">0</td>
+            <td id="messageListTime">0</td>
         </tr>
     </table>
 </body>

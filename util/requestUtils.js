@@ -23,8 +23,8 @@ module.exports.send =function(res, code, data){
     data = data || {};
     data.code = code;
     data.msg = data.msg || getMessage(code);
-    log.info(JSON.stringify(data));
-//    console.log(JSON.stringify(data));
+//    log.info(JSON.stringify(data));
+    console.log(JSON.stringify(data));
     res.send(data);
 }
 /**
@@ -52,11 +52,10 @@ module.exports.getSign = function(args, msg){
     for(var i= 0,l=paramNameAndValueArray.length; i<l; i++) {
         signValue += paramNameAndValueArray[i];
     }
-//    log.info('qianmingqian:'+signValue);
     //首尾加上秘钥
     signValue = SystemConfig.SECRET + signValue + SystemConfig.SECRET;
     signValue = encodeURIComponent(signValue);
-
+//    log.info('qianmingqian:'+signValue);
     signValue = crypto.createHash('sha256').update(signValue).digest('hex').toUpperCase();
 //    log.info("qianminghou:"+signValue);
     return signValue;

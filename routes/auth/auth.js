@@ -13,10 +13,13 @@ var utils = require("../../util/utils");
  * @returns {*}
  */
 module.exports.situationAuth = function(req, res, next){
+    /*
     var body = req.method =="GET"?req.query : req.body;
     var msg = utils.validateParameters(body,["username","token"]);
     if(msg) return requestUtils.send(res, Code.MISSING_PARAMTER,msg);
     validateTokken(res,body,next);
+    */
+    next();
 }
 /**
  *好友接口token验证
@@ -28,6 +31,7 @@ module.exports.situationAuth = function(req, res, next){
 module.exports.friendAuth = function(args){
     (args = args || []).push("token")
     return function(req, res, next){
+        /*
         try{
             var body = req.method =="GET"?req.query : req.body;
             var username = req.session.user.u;
@@ -38,6 +42,8 @@ module.exports.friendAuth = function(args){
         }catch(e){
             console.log(e.stack);
         }
+        */
+        next();
     }
 }
 /**
@@ -47,6 +53,7 @@ module.exports.friendAuth = function(args){
  */
 module.exports.registAuth = function(args){
     return function(req, res, next){
+        /*
         var body = req.method =="GET"?req.query : req.body;
         args = args || []
         var msg = utils.validateParameters(body,args);
@@ -56,6 +63,8 @@ module.exports.registAuth = function(args){
         if(!email && !mobile){
             return requestUtils.send(res,Code.MISSING_PARAMTER,"email mobile必须选择一项");
         }
+        next();
+        */
         next();
     }
 }
@@ -68,9 +77,12 @@ module.exports.registAuth = function(args){
  * @returns {*}
  */
 module.exports.authLogin = function(req, res, next){
+    /*
     var user = req.session.user;
 //    console.log(req.headers);
     if(!user) return requestUtils.send(res, Code.USERS.NOT_LOGIN);
+    */
+    req.session.user = {u:"chenwen"};
     next();
 }
 

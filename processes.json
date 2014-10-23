@@ -1,0 +1,15 @@
+[
+    {
+        "name" : "server",
+        "script" : "app.js",
+        "instances" : 4,
+        "port" : 9005,
+        "log_date_format" : "YYYY-MM-DD",
+        "error_file" : "./logs/child_error.log",
+        "out_file" : "./logs/child_out.log",
+        "pid_file" : "./logs/child_pid.log",
+        "env" : {
+            "NODE_ENV" : "production"
+        }
+    }
+]

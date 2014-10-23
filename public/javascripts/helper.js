@@ -20,6 +20,7 @@ var helper = (function(){
         }
         //首尾加上秘钥
         signValue = encodeURIComponent(signValue);
+//        alert(signValue);
         signValue = hex_sha256(signValue).toUpperCase();
         //加盐
         /*
@@ -36,6 +37,7 @@ var helper = (function(){
          });
          */
 //    return crypto.createHash("sha1").update(signValue).digest("hex").toUpperCase();
+//        alert(signValue);
         return signValue;
     }
     return mod;
