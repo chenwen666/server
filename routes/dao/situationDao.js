@@ -18,14 +18,10 @@ var situationDao = {};
 situationDao.findByDeviceId = function(devId, cb){
     async.waterfall([function(callback){
         DeviceModel.findOne({"id":devId},function(err, device){
-            if(err) return callback(err,null);
-            if(!device){
-                callback(null, null);
-            }else{
-                callback(null, device);
-            }
+            callback(err, device);
         });
     },function(device,callback){
+        if(!device) return callback(null, null);
         var sid = device.p;
         if(!sid) return callback(null, null);
         Situation.findOne({"id":sid},function(err, doc){

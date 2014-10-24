@@ -46,6 +46,7 @@ userService.validateToken = function(msg,cb){
  * @param cb
  */
 userService.regist = function(msg, cb){
+    var username = msg.username;
     var password = msg.password;
     var email = msg.email;
     var mobile = msg.mobile;
@@ -57,15 +58,15 @@ userService.regist = function(msg, cb){
     var loc = msg.loc;
     var deviceType = msg.deviceType;
     var opts = {
-        u : msg.username,
-        p : msg.password,
-        em : msg.email,
-        m : msg.mobile,
-        n : msg.nickName,
-        g : msg.gender,
-        b : msg.birthday,
-        re : new Date(),
-        dt : msg.deviceType
+        u : username,
+        p : password,
+        em : email,
+        m : mobile,
+        n : nickName,
+        g : gender,
+        b : birthday,
+        re : signupDate,
+        dt : deviceType
     }
     userDao.regist(opts,cb);
 }
