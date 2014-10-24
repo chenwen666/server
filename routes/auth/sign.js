@@ -8,7 +8,6 @@ var Code = require("../../config/Code");
 var log = require("../../util/logger");
 module.exports = function(args){
     return function(req, res ,next){
-        /*
         try{
             var body = req.method =="GET" ? req.query : req.body;
             var msg = utils.validateParameters(body, args);
@@ -25,7 +24,5 @@ module.exports = function(args){
             log.error(req.body.username+":"+req.url+'error:'+e.stack);
             requestUtils.send(res,Code.SYSTEM_ERROR);
         }
-        */
-        next();
     }
 }

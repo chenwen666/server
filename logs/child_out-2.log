@@ -299,3 +299,35 @@
 2014-10-23: [0mGET /friends/request/list?applyName=0&msg=Thu+Oct+23+2014+15%3A57%3A10+GMT%2B0800+(%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4) [36m304 [0m3.776 ms - -[0m
 2014-10-23: [32m[2014-10-23 15:57:10.657] [INFO] console - [39m{"page":{"pageNo":1,"pageEntries":20,"content":[],"totalElements":0,"totalPages":0},"code":200,"msg":"操作成功"}
 2014-10-23: [0mGET /friends/request/list?applyName=0&msg=Thu+Oct+23+2014+15%3A57%3A10+GMT%2B0800+(%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4) [36m304 [0m3.919 ms - -[0m
+2014-10-23: [0mGET / [36m304 [0m2.037 ms - -[0m
+2014-10-23: [0mGET /favicon.ico [36m304 [0m2.375 ms - -[0m
+2014-10-23: [0mGET / [36m304 [0m2.978 ms - -[0m
+2014-10-23: [0mGET /favicon.ico [36m304 [0m2.238 ms - -[0m
+2014-10-23: [0mGET / [36m304 [0m2.172 ms - -[0m
+2014-10-23: [0mGET /favicon.ico [36m304 [0m3.192 ms - -[0m
+2014-10-23: [0mGET /test/login [36m304 [0m7.818 ms - -[0m
+2014-10-23: [0mGET /javascripts/jquery.js [36m304 [0m4.912 ms - -[0m
+2014-10-23: [0mGET /javascripts/sha256.js [36m304 [0m3.861 ms - -[0m
+2014-10-23: [0mGET /favicon.ico [36m304 [0m1.404 ms - -[0m
+2014-10-23: [32m[2014-10-23 16:51:24.563] [INFO] console - [39m{"code":200,"user":{"username":"chenwen","mobile":"","email":"750912340@qq.com","iconHash":"","nickName":"xiaowenzi","birthday":"","address":"","lastOpenTime":"Thu Oct 23 2014 14:38:22 GMT+0800 (CST)"},"token":"98e296ece6dcaebf20e9382bf2ba6ebdc0718eadcc46d455701dd67061593571","refreshToken":"3fcda2536e116004cf35941431cebf019d8351f41be3e683dd259d227302d719","msg":"操作成功"}
+2014-10-23: [0mPOST /oauth2/login [32m200 [0m36.400 ms - 380[0m
+2014-10-23: [0mGET /favicon.ico [36m304 [0m7.326 ms - -[0m
+2014-10-23: [0mGET /favicon.ico [36m304 [0m2.258 ms - -[0m
+2014-10-23: [0mGET /favicon.ico [36m304 [0m4.620 ms - -[0m
+2014-10-23: [0mGET /test/friends/add/request/handler [36m304 [0m4.667 ms - -[0m
+2014-10-23: [0mGET /favicon.ico [36m304 [0m2.333 ms - -[0m
+2014-10-23: [0mGET /favicon.ico [36m304 [0m7.809 ms - -[0m
+2014-10-23: [0mGET /test/friends/search [36m304 [0m2.462 ms - -[0m
+2014-10-23: [0mGET /favicon.ico [36m304 [0m4.487 ms - -[0m
+2014-10-23: [32m[2014-10-23 16:52:35.993] [INFO] console - [39m{"user":{"username":"chenwen","mobile":"","email":"750912340@qq.com","iconHash":"","nickName":"xiaowenzi","birthday":"","address":"","lastOpenTime":"Thu Oct 23 2014 16:51:24 GMT+0800 (CST)","isFriend":false},"code":200,"msg":"操作成功"}
+2014-10-23: [0mGET /friends/search?applyName=chenwen&token= [32m200 [0m5.676 ms - 240[0m
+2014-10-23: [0mGET /favicon.ico [36m304 [0m4.527 ms - -[0m
+2014-10-23: [0mGET /favicon.ico [36m304 [0m4.569 ms - -[0m
+2014-10-23: [0mGET / [36m304 [0m2.365 ms - -[0m
+2014-10-23: [0mGET /favicon.ico [36m304 [0m2.596 ms - -[0m
+2014-10-23: [0mGET /test/friends/list [36m304 [0m3.478 ms - -[0m
+2014-10-23: [0mGET /favicon.ico [36m304 [0m1.385 ms - -[0m
+2014-10-23: [32m[2014-10-23 17:06:26.032] [INFO] console - [39m{"page":{"pageNo":1,"pageEntries":20,"content":[],"totalElements":0,"totalPages":0},"code":200,"msg":"操作成功"}
+2014-10-23: [0mGET /friends/list?token=ef8c370995a6db8418991a176dea8857a95da8e94bf32ce19079f0a968d0e6ab&pageNo=&pageEntries=&ctrn=&drtn= [32m200 [0m7.356 ms - 116[0m
+2014-10-23: [0mGET /favicon.ico [36m304 [0m3.762 ms - -[0m
+2014-10-23: [0mGET /favicon.ico [36m304 [0m5.382 ms - -[0m

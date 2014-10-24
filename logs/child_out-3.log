@@ -411,3 +411,4 @@
 2014-10-23: [0mGET /friends/request/list?applyName=0&msg=Thu+Oct+23+2014+15%3A52%3A48+GMT%2B0800+(%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4) [36m304 [0m5.448 ms - -[0m
 2014-10-23: [32m[2014-10-23 15:52:48.571] [INFO] console - [39m{"page":{"pageNo":1,"pageEntries":20,"content":[],"totalElements":0,"totalPages":0},"code":200,"msg":"操作成功"}
 2014-10-23: [0mGET /friends/request/list?applyName=0&msg=Thu+Oct+23+2014+15%3A52%3A48+GMT%2B0800+(%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4) [36m304 [0m4.905 ms - -[0m
+2014-10-23: [0mGET /javascripts/helper.js [36m304 [0m1.980 ms - -[0m

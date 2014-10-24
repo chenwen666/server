@@ -30,8 +30,7 @@ app.use(session({
     store : new RedisStore({
         host : "127.0.0.1",
         port : 6379,
-        ttl : SystemConfig.REDIS_EXPIRES,
-        db : 1
+        ttl : SystemConfig.REDIS_EXPIRES
     }),
     secret : "server"
 }))
