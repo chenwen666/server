@@ -27,17 +27,18 @@ var server = http.createServer(function(req, res){
     },function(data,callback){
         log.info("刷新token:%j",data);
         var username = "";
+        if(!!data.user) username = data.user.username;
         var token = data.token;
         setNickName(username,"1111111",function(err){
             callback(err,username, token);
         })
     },function(username, token,callback){
-        log.info("修改昵称成功 : "+username);
+        log.info("修改昵称成功:"+username);
         setPassword(username,"1",function(err){
             callback(err,username,token);
         })
     },function(username, token ,callback){
-        log.info("修改密码成功："+username);
+        log.info("修改密码成功:"+username);
         addRequest(username,function(err){
             callback(err, username, token);
         })
@@ -105,7 +106,11 @@ var server = http.createServer(function(req, res){
             callback(err, username, token);
         })
     }],function(err){
-        res.end("200");
+        if(err){
+            res.end(err.stack);
+        }else{
+            res.end("200");
+        }
     })
 }).listen(8080);
 //注册

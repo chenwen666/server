@@ -2,7 +2,7 @@
     {
         "name" : "server",
         "script" : "app.js",
-        "instances" : 4,
+        "instances" : 8,
         "port" : 9005,
         "log_date_format" : "YYYY-MM-DD",
         "error_file" : "./logs/child_error.log",
@@ -11,5 +11,17 @@
         "env" : {
             "NODE_ENV" : "production"
         }
+    },{
+    "name" : "test",
+    "script" : "appTest.js",
+    "instances" : 8,
+    "port" : 9006,
+    "log_date_format" : "YYYY-MM-DD",
+    "error_file" : "./logs/child_error.log",
+    "out_file" : "./logs/child_out.log",
+    "pid_file" : "./logs/child_pid.log",
+    "env" : {
+        "NODE_ENV" : "production"
     }
+}
 ]
