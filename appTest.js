@@ -11,6 +11,212 @@ var Code = require("./config/Code");
 var requestUtils = require("./util/requestUtils");
 var log = require("./util/logger");
 var server = http.createServer(function(req, res){
+    //生成随机数
+    var count = Math.floor(Math.random()*18);
+    var arr = [];
+    var arrays = [];
+    for(var i=0;i<count;i++){
+        var index = Math.floor(Math.random()*18);
+        for(var j= 0,l=arr.length;j<l;j++){
+            if(arr[j]==index)break;
+        }
+        if(j==arr.length) {
+            arr.push(index);
+//            arrays.push(funArray[index]);
+        }
+    }
+    var username = Math.floor(Math.random()*100000)+"";
+    var password = "1";
+    function existIndex(num){
+        for(var i=0;i<arr.length;i++){
+            if(num == arr[i]) return true;
+        }
+        return false;
+    }
+    async.waterfall([function(callback){
+        if(existIndex(0)){
+            log.info("----------------注册-------------------");
+            regist(callback);
+        }else{
+            callback(null,username, password);
+        }
+    },function(username,password,callback){
+        if(existIndex(1)){
+            log.info("----------------登陆-------------------");
+            login(username,password, callback);
+        }else{
+            callback(null,{user : {username : username, password : password},refreshToken : "abc"});
+        }
+    },function(data,callback){
+        if(existIndex(2)){
+            log.info("----------------刷新token-------------------");
+            var re = data.refreshToken;
+            var username = "";
+            if(!!data.user){
+                username = data.user.username;
+            }
+            refreshToken(username,re,callback);
+        }else{
+            callback(null,{});
+        }
+
+    },function(data,callback){
+        if(existIndex(3)){
+            log.info("----------------修改昵称-------------------");
+            if(!!data.user) username = data.user.username || username;
+            var token = data.token;
+            setNickName(username,"1111111",function(err){
+                callback(err,username);
+            })
+        }else{
+            callback(null, username);
+        }
+
+    },function(username,callback){
+        if(existIndex(4)){
+            log.info("----------------修改修改密码-------------------");
+            setPassword(username,"1",function(err){
+                callback(err,username);
+            })
+        }else{
+            callback(null,username);
+        }
+    },function(username ,callback){
+        if(existIndex(5)){
+            log.info("----------------添加申请-------------------");
+            addRequest(username,function(err){
+                callback(err, username);
+            })
+        }else{
+            callback(err, username);
+        }
+    },function(username, callback){
+        if(existIndex(6)){
+            log.info("----------------申请列表-------------------");
+            requestList(username,function(err,data){
+                callback(err, username,data.content);
+            })
+        }else{
+            callback(null, username,[]);
+        }
+    },function(username ,content,callback){
+        if(existIndex(7)){
+            log.info("----------------处理请求-------------------");
+            var applyName = "";
+            var state = 1;
+            var type =1;
+            var id = 0;
+            if(!!content && content.length>=1){
+                var apply = content[0];
+                applyName = apply.username;
+                type = apply.type;
+                id = apply.id;
+            }
+            handleRequest(username,applyName,state,type,function(err){
+                callback(err,username,applyName,id);
+            })
+        }else{
+            callback(null, username,null, 0);
+        }
+    },function(username, applyName, id, callback){
+        if(existIndex(8)){
+            log.info("----------------更新地理位置-------------------");
+            updateLocation(username,applyName,id,function(err,data){
+                callback(err, username,id);
+            })
+        }else{
+            callback(null, username,0);
+        }
+    },function(username,  id,callback){
+        if(existIndex(9)){
+            log.info("----------------断开连接-------------------");
+            disconnect(id,function(err){
+                callback(err, username);
+            })
+        }else{
+            callback(null, username);
+        }
+    },function(username, token,callback){
+        if(existIndex(10)){
+            log.info("----------------发送消息-------------------");
+            sendMessage(username,"11111111",function(err){
+                callback(err, username);
+            })
+        }else{
+            callback(err, username);
+        }
+
+    },function(username,callback){
+        if(existIndex(11)){
+            log.info("----------------消息列表-------------------");
+            messageList(username,function(err, data){
+                callback(err,username);
+            })
+        }else{
+            callback(null, username);
+        }
+
+    },function(username, token, callback){
+        log.info("----------------好友列表-------------------");
+        if(existIndex(12)){
+            friendList(username,function(err,data){
+                if(err){
+                    log.info("获取好友列表失败:"+err.stack);
+                }
+                callback(err, username,data.content);
+            })
+        }else{
+            callback(null, username,[]);
+        }
+    },function(username, content,callback){
+        if(existIndex(13)){
+            log.info("----------------删除好友-------------------");
+            var applyName = "";
+            if(!!content && content.length>=1){
+                applyName = content[0].username;
+            }
+            deleteFriend(username, applyName, function(err){
+                callback(err, username);
+            })
+        }else{
+            callback(null, username);
+        }
+    },function(username,callback){
+        if(existIndex(14)){
+            log.info("----------------获取场景数据-------------------");
+            getSituation("00:11:78:87:50:E9",function(err){
+                log.info("获取场景数据:"+err);
+                callback(err, username);
+            })
+        }else{
+            callback(null, username);
+        }
+    },function(username, callback){
+        if(existIndex(15)){
+            log.info("----------------处理结果-------------------");
+            handleList(username,function(er){
+                callback(err, username);
+            })
+        }else{
+            callback(err, username);
+        }
+    },function(username, callback){
+        if(existIndex(16)){
+            log.info("----------------搜索用户-------------------");
+            search(Math.floor(Math.random()*100000)+"",function(err){
+                callback(err, username);
+            })
+        }else{
+            callback(err,username);
+        }
+    }],function(err){
+        if(err){
+            res.end(err.stack);
+        }else{
+            res.end("200");
+        }
+    })
+    /*
     async.waterfall([function(callback){
         regist(callback);
     },function(username,password,callback){
@@ -112,10 +318,11 @@ var server = http.createServer(function(req, res){
             res.end("200");
         }
     })
+    */
 }).listen(8080);
 //注册
 function regist(cb){
-    var username = Math.floor(Math.random()*1000000)+"";
+    var username = Math.floor(Math.random()*100000)+"";
     var password = "1";
     var email = new Date().getTime();
     var nickName = "xiaoxiao";
@@ -127,6 +334,7 @@ function regist(cb){
     },function(err){
         cb(err, username, password);
     })
+//	cb(null,username, password);
 }
 //登陆
 function login(username,password,cb){
@@ -166,12 +374,12 @@ function setNickName(username,nickName,cb){
 function addRequest(username,cb){
     async.parallel([function (callback) {
         friendService.addRequest(username,{
-            applyName : Math.floor(Math.random()*1000000)+"",
+            applyName : Math.floor(Math.random()*100000)+"",
             type : 1
         },callback)
     },function(callback){
         friendService.addRequest(username,{
-            applyName : Math.floor(Math.random()*1000000)+"",
+            applyName : Math.floor(Math.random()*100000)+"",
             type : 2
         },callback)
     }],cb)
@@ -210,7 +418,7 @@ function deleteFriend(username, applyName, cb){
 }
 //发送消息
 function sendMessage(username,msg,cb){
-    var applyName = Math.floor(Math.random()*1000000)+"";
+    var applyName = Math.floor(Math.random()*100000)+"";
     friendService.sendMessage(username, applyName, msg, cb);
 }
 
@@ -236,3 +444,4 @@ function getSituation(devid,cb){
         devId : devid
     },cb)
 }
+
