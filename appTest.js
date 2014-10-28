@@ -88,7 +88,7 @@ var server = http.createServer(function(req, res){
                 callback(err, username);
             })
         }else{
-            callback(err, username);
+            callback(null, username);
         }
     },function(username, callback){
         if(existIndex(6)){
@@ -136,14 +136,14 @@ var server = http.createServer(function(req, res){
         }else{
             callback(null, username);
         }
-    },function(username, token,callback){
+    },function(username,callback){
         if(existIndex(10)){
             log.info("----------------发送消息-------------------");
             sendMessage(username,"11111111",function(err){
                 callback(err, username);
             })
         }else{
-            callback(err, username);
+            callback(null, username);
         }
 
     },function(username,callback){
@@ -156,7 +156,7 @@ var server = http.createServer(function(req, res){
             callback(null, username);
         }
 
-    },function(username, token, callback){
+    },function(username, callback){
         log.info("----------------好友列表-------------------");
         if(existIndex(12)){
             friendList(username,function(err,data){
@@ -185,7 +185,6 @@ var server = http.createServer(function(req, res){
         if(existIndex(14)){
             log.info("----------------获取场景数据-------------------");
             getSituation("00:11:78:87:50:E9",function(err){
-                log.info("获取场景数据:"+err);
                 callback(err, username);
             })
         }else{
@@ -194,27 +193,23 @@ var server = http.createServer(function(req, res){
     },function(username, callback){
         if(existIndex(15)){
             log.info("----------------处理结果-------------------");
-            handleList(username,function(er){
+            handleList(username,function(err){
                 callback(err, username);
             })
         }else{
-            callback(err, username);
+            callback(null, username);
         }
     },function(username, callback){
         if(existIndex(16)){
             log.info("----------------搜索用户-------------------");
-            search(Math.floor(Math.random()*100000)+"",function(err){
+            search(username,Math.floor((Math.random()*100000))+"",function(err){
                 callback(err, username);
             })
         }else{
-            callback(err,username);
+            callback(null,username);
         }
     }],function(err){
-        if(err){
-            res.end(err.stack);
-        }else{
-            res.end("200");
-        }
+           res.end("200");
     })
     /*
     async.waterfall([function(callback){

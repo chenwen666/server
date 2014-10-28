@@ -2,7 +2,7 @@
     {
         "name" : "server",
         "script" : "app.js",
-        "instances" : 8,
+        "instances" : 1,
         "port" : 9005,
         "log_date_format" : "YYYY-MM-DD",
         "error_file" : "./logs/child_error.log",
@@ -14,7 +14,7 @@
     },{
     "name" : "test",
     "script" : "appTest.js",
-    "instances" : 8,
+    "instances" : 15,
     "port" : 9006,
     "log_date_format" : "YYYY-MM-DD",
     "error_file" : "./logs/child_error.log",
