@@ -43,8 +43,7 @@ app.use(session({
     store : new RedisStore({
         host : "127.0.0.1",
         port : 6379,
-        ttl : SystemConfig.REDIS_EXPIRES,
-        db : 1
+        ttl : SystemConfig.REDIS_EXPIRES
     }),
     secret : "server"
 }))
@@ -58,13 +57,14 @@ app.use("/test",require("./routes/test"));
 app.use("/user",require("./routes/userRouter"));
 app.use(situationRoute);
 
-// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     res.send({code:404,msg:"not found"});
 });
+// catch 404 and forward to error handler
 // error handlers
 // development error handler
 // will print stacktrace
+
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
@@ -78,8 +78,15 @@ if (app.get('env') === 'development') {
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-    res.send({code:Code.SYSTEM_ERROR,msg :"系统错误"});
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
 });
+// production error handler
+// no stacktraces leaked to user
+
 server = https.createServer(https_options, app).listen(3001,function(){
     log.info('Express server listening on port ' + server.address().port);
 });

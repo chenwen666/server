@@ -11,7 +11,7 @@ var User = require("../domain/User");
 var FriendApply = require("../domain/FriendApply");
 var Code = require("../../config/Code");
 var async = require("async");
-var redis = require("../database/redis.js");
+var redis = require("../database/redis");
 var utils = require("../../util/utils");
 
 var friendDao = {};
@@ -23,7 +23,7 @@ var friendDao = {};
  */
 friendDao.search = function(username, searchName, cb){
     var self = this;
-    async.waterfall([function(callback){//先从redis查询
+    async.waterfall([function(callback){
         userDao.get(searchName,callback);
     },function(data, callback){
         if(!data) return callback(null,null);
@@ -35,9 +35,7 @@ friendDao.search = function(username, searchName, cb){
             user.isFriend = flag;
             callback(null, user);
         });
-    }],function(err, user){
-        cb(err, user);
-    });
+    }],cb);
 }
 
 /**
@@ -59,7 +57,7 @@ friendDao.addRequest = function(username,msg, cb){
     }
     var conditions = {u:applyName,"l":{"$elemMatch":{"u":username,"tp":type}}};
     async.waterfall([function(callback){
-        UserModel.findOne(conditions,callback);
+        UserModel.findOne(conditions,{u:1,_id:0},callback);
     },function(apply,callback){
         if(!!apply){ //如果这个存在则修改
             UserModel.update(conditions,{"$set":{"l.$.t":date,"l.$.m":message}},callback);
@@ -76,24 +74,20 @@ friendDao.addRequest = function(username,msg, cb){
  * @param page
  * @param cb
  */
-friendDao.getRequestList = function(username, page,ctrn, drtn,cb){
-    var pageNo = +page.pageNo;
-    var pageEntries = +page.pageEntries;
-    dbUtils.findPage(UserModel,page,{u:username},{"l":{"$slice":[(pageNo-1)*pageEntries,pageEntries]}},function(user){
-        if(!!user.l)return user.l.length;
-        return 0;
-    },function(list){
-        var array = list.l;
-        var content = [];
-        if(!!array){
+friendDao.getRequestList = function(username,cb){
+    UserModel.findOne({u:username},{l:1,_id:0},function(err,user){
+        if(err) return cb(err);
+        var list = [];
+        if(!!user && !!user.l){
+            var array = user.l;
             for(var i= 0,l=array.length;i<l;i++){
-                var apply = new FriendApply();
-                apply.buildFormDb(array[i]);
-                content.push(apply);
-            };
+                var friendApply = new FriendApply();
+                friendApply.buildFormDb(array[i]);
+                list.push(friendApply);
+            }
         }
-        return content;
-    },cb);
+        cb(null, list);
+    });
 }
 /**
  * 添加好友
@@ -133,14 +127,8 @@ friendDao.addFriend = function(username, applyName, cb){
  * @param cb
  */
 friendDao.updateFriendAddApply = function(username, applyName,type,state, cb){
-    async.waterfall([function(callback){
-       UserModel.findOne({u:username,"l":{"$elemMatch":{"u":applyName,"tp":+type}}},callback);
-    },function(user,callback){
-        if(!user) return callback(null, 0);
-        UserModel.update({u:username},{"$pull":{"l":{u:applyName,tp:+type}}},callback);
-    }],function(err,data){
-        cb(err, data);
-    });
+    UserModel.findOneAndUpdate({u:username,"l":{"$elemMatch":{"u":applyName,"tp":+type}}},
+        {"$pull":{"l":{u:applyName,tp:+type}}},{select:{u:1,_id:0}},cb);
 }
 /**
  * 删除好友    username删除applyName
@@ -168,74 +156,54 @@ friendDao.delete = function(username, applyName, cb){
     }],cb)
 }
 /**
- * 获取好友分页
+ * 获取好友列表
  * @param username
  * @param cb
  */
-friendDao.findPageOfFriends = function(username,page,ctrn, drtn,cb){
-    var pageNo = +page.pageNo;
-    var pageEntries = +page.pageEntries;
-    var startEntires = (pageNo-1)*pageEntries;
-    async.waterfall([function(callback){  //从reidis中找
-        redis.hget(username,"f",function(err,res){
-            if(err) return callback(err,null);
-            var friendList = JSON.parse(res);
-            if(!!friendList){
-                page.setTotalElements(friendList.length);
-            }
-            callback(null, friendList);
+friendDao.friendList = function(username, cb){
+    async.waterfall([function(callback){
+        redis.hget(username,"f",function(err, fs){
+            if(!!fs) fs = JSON.parse(fs);
+            callback(err,fs);
         });
-    },function(friendList,callback){ //redis找不到,从mongoose中找
-        if(!!friendList) return callback(null, friendList);
-        dbUtils.findPage(UserModel,page,{u:username},{"f":{"$slice":[(pageNo-1)*pageEntries,pageEntries]}},function(res){
-            if(!!res && !!res.f) return res.f.length;
-            return 0;
-        },function(res){
-            if(!!res){
-                redis.hset(username, "f",JSON.stringify(res.f), function(err){
-                    if(err) log.error(username+" friendDao.findPageOfFriends好友列表存入数据库失败:"+err.stack);
-                });
-                return res.f;
-            }
-            return null;
-        },function(err, page){
-            if(err) return callback(err, null);
-            if(!!page) return callback(null, page.content);
-            return callback(null, []);
-        })
-    },function(friendList,callback){//查找用户信息
-        var names = [];
-        var array = [];
-        var count = 0;
-        if(!!friendList){
-            for(var i= 0,l=friendList.length;i<l;i++){
-                if(friendList[i].u){
-                    names.push(friendList[i].u);
-                }
-            }
+    },function(list, callback){
+        if(!!list){
+            callback(null, list);
+        }else{
+            UserModel.findOne({u:username},{_id:0,f:1},function(err, user){
+                list = [];
+                if(!!user && !!user.f) list = user.f;
+                callback(err, list);
+            })
         }
-        var query = UserModel.find({u:{"$in":names}},{h:0,t:0,ms:0,l:0,f:0,h:0,rt:0,p:0});
-        query.sort({lt:-1});
-        query.skip((pageNo-1)*pageEntries);
-        query.limit(pageEntries);
-        query.exec(function(err,users){
-            if(err) return callback(err,null);
-            if(!!users){
+    },function(friendList, callback){
+        var names = [];
+        for(var i= 0,l=friendList.length;i<l;i++){
+            names.push(friendList[i].u);
+        }
+        if(names.length>=1){  //如果有好友
+            var query = UserModel.find({u:{"$in":names}},{u:1,g:1,b:1,im:1,em:1,a:1,n:1,m:1,lt:1,_id:0});
+            query.sort({lt:-1});
+            query.exec(function(err,users){
+                if(err) callback(err);
+                var content = [];
                 for(var i= 0,l=users.length;i<l;i++){
-                    for(var j = 0,t=friendList.length;j<t;j++){
-                        if(users[i].u == friendList[j].u){
-                            var friend = new User().buildFormDb(users[i]);
-                            friend.addTime = friendList[j].at;
-                            array.push(friend);
+                    for(var j= 0,t=friendList.length;j<t;j++){
+                        if(friendList[j].u == users[i].u){
+                            var friend = new Friend();
+                            friend.buildFormDb(friendList[j]);
+                            friend.buildFormDb(users[i]);
+                            content.push(friend);
                             break;
                         }
                     }
                 }
-            }
-            page.setContent(array)
-            callback(null, page);
-        });
-    }],cb);
+                callback(err, content);
+            });
+        }else{
+            callback(null, []);
+        }
+    }],cb)
 }
 /**
  * 判断是不是好友关系
@@ -246,27 +214,24 @@ friendDao.findPageOfFriends = function(username,page,ctrn, drtn,cb){
 friendDao.isFriend = function(username,applyName,cb){
     async.waterfall([function(callback){
         redis.hget(username,"f",function(err,friendList){
-            if(!friendList)return callback(null, false);
+            if(!friendList)return callback(null, 2);
             try{
                 friendList = JSON.parse(friendList);
                 return callback(null, utils.isExistOfArray(friendList, "u", applyName));
             }catch(e){//如果发生错误重新从mongodb中加载
+                log.info("friendDao.isFriend error:"+ e.stack);
                 return callback(null,false);
             }
         });
     },function(isFriend, callback){
-        if(isFriend) return callback(null, isFriend);
-        UserModel.findOne({u:username},function(err,user){
+        if(isFriend !=2) return callback(null, isFriend);
+        UserModel.findOne({u:username},{_id:0,f:1},function(err,user){
             if(err) return callback(err,false);
             if(!user || !user.f) return callback(null, false);
             var friendList = user.f;
             if(!!friendList){
                 var flag = utils.isExistOfArray(friendList,"u", applyName);
                 if(flag){
-                    //因为redis没有找到mongoose找到了,重新更新reids
-                    redis.hset(username,"f",JSON.stringify(friendList),function(err){
-                        if(err) log.error("friendDao.isFriend 好友列表写入reids失败:"+err.stack);
-                    });
                     return callback(null, true);
                 }
             }
@@ -282,9 +247,15 @@ friendDao.isFriend = function(username,applyName,cb){
  */
 friendDao.sendMessage = function(username, applyName,msg, cb){
     async.waterfall([function(callback){
-        userDao.get(applyName, callback);
-    },function(user, callback){
-        if(!user) return callback(null, Code.USERS.NOT_EXIST);
+        redis.exists(applyName,callback);
+    },function(exist, callback){
+        if(exist){
+            callback(null, true);
+        }else{
+            UserModel.findOne({u:applyName},{u:1},callback);
+        }
+    },function(flag, callback){
+        if(!flag) return callback(null, Code.USERS.NOT_EXIST);
         var date = new Date();
         var opts = {
             u : username,

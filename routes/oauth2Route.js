@@ -46,10 +46,10 @@ function login(req, res, body){
         userService.validateUser(req.body, function(err, data){
             if(!!data && data.code == Code.OK){
                 var user = data.user;
-                req.session.user = {u:req.body.username,p:req.body.password};
+                setSession(req,{u:req.body.username,t:data.token,e:data.expire});
                 var redirectURL = req.body.redirectURL;
                 if(redirectURL){
-                    redirectURL += "?token="+data.data.token+"&refreshToken="+data.data.refreshToken;
+                    redirectURL += "?token="+data.token+"&refreshToken="+data.refreshToken;
                     res.redirect(redirectURL);
                 }else{
                     requestUtils.send(res, Code.OK, data);
@@ -79,7 +79,7 @@ function createToken(req, res){
             if(!data.code){
                return  requestUtils.send(res, data);
             }
-            req.session.user = {u:req.body.username};
+            setSession(req,{u:req.body.username,t:data.token,e:data.expire});
             requestUtils.send(res,data.code,{token:data.token,user:data.user});
         });
     }catch(e){
@@ -87,5 +87,7 @@ function createToken(req, res){
         requestUtils.send(res,Code.SYSTEM_ERROR);
     }
 }
-
+function setSession(req, obj){
+    req.session.user = obj;
+}
 module.exports = router;

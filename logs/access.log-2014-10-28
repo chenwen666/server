@@ -472,3 +472,33 @@
 [2014-10-28 10:44:48.028] [INFO] normal - ----------------消息列表-------------------
 [2014-10-28 10:44:48.032] [INFO] normal - ----------------好友列表-------------------
 [2014-10-28 10:44:48.035] [INFO] normal - ----------------搜索用户-------------------
+[2014-10-28 17:04:49.328] [INFO] normal - SMTP Configured
+[2014-10-28 17:04:49.436] [ERROR] normal - 连接mongodb数据库失败:Error: Replicaset name MF does not match specified name server
+    at E:\workpace\server\node_modules\mongoose\node_modules\mongodb\lib\mongodb\connection\repl_set\repl_set.js:432:45
+    at E:\workpace\server\node_modules\mongoose\node_modules\mongodb\lib\mongodb\connection\server.js:386:9
+    at Server.Base._callHandler (E:\workpace\server\node_modules\mongoose\node_modules\mongodb\lib\mongodb\connection\base.js:445:41)
+    at E:\workpace\server\node_modules\mongoose\node_modules\mongodb\lib\mongodb\connection\server.js:478:18
+    at MongoReply.parseBody (E:\workpace\server\node_modules\mongoose\node_modules\mongodb\lib\mongodb\responses\mongo_reply.js:68:5)
+    at null.<anonymous> (E:\workpace\server\node_modules\mongoose\node_modules\mongodb\lib\mongodb\connection\server.js:436:20)
+    at emit (events.js:95:17)
+    at null.<anonymous> (E:\workpace\server\node_modules\mongoose\node_modules\mongodb\lib\mongodb\connection\connection_pool.js:201:13)
+    at emit (events.js:98:17)
+    at Socket.<anonymous> (E:\workpace\server\node_modules\mongoose\node_modules\mongodb\lib\mongodb\connection\connection.js:439:22)
+[2014-10-28 17:12:20.831] [INFO] normal - SMTP Configured
+[2014-10-28 17:12:20.868] [ERROR] normal - 连接mongodb数据库失败:Error: Replicaset name MF does not match specified name server
+    at E:\workpace\server\node_modules\mongoose\node_modules\mongodb\lib\mongodb\connection\repl_set\repl_set.js:432:45
+    at E:\workpace\server\node_modules\mongoose\node_modules\mongodb\lib\mongodb\connection\server.js:386:9
+    at Server.Base._callHandler (E:\workpace\server\node_modules\mongoose\node_modules\mongodb\lib\mongodb\connection\base.js:445:41)
+    at E:\workpace\server\node_modules\mongoose\node_modules\mongodb\lib\mongodb\connection\server.js:478:18
+    at MongoReply.parseBody (E:\workpace\server\node_modules\mongoose\node_modules\mongodb\lib\mongodb\responses\mongo_reply.js:68:5)
+    at null.<anonymous> (E:\workpace\server\node_modules\mongoose\node_modules\mongodb\lib\mongodb\connection\server.js:436:20)
+    at emit (events.js:95:17)
+    at null.<anonymous> (E:\workpace\server\node_modules\mongoose\node_modules\mongodb\lib\mongodb\connection\connection_pool.js:201:13)
+    at emit (events.js:98:17)
+    at Socket.<anonymous> (E:\workpace\server\node_modules\mongoose\node_modules\mongodb\lib\mongodb\connection\connection.js:439:22)
+[2014-10-28 17:13:32.482] [INFO] normal - SMTP Configured
+[2014-10-28 17:13:32.524] [INFO] normal - mongodb已连接
+[2014-10-28 17:16:24.828] [INFO] normal - SMTP Configured
+[2014-10-28 17:16:24.871] [INFO] normal - mongodb已连接
+[2014-10-28 17:16:40.506] [INFO] normal - SMTP Configured
+[2014-10-28 17:16:40.551] [INFO] normal - mongodb已连接

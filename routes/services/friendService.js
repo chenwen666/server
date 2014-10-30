@@ -31,7 +31,11 @@ friendService.addRequest = function(username, msg, cb){
     var applyName = msg.applyName;
     var type = +msg.type || FriendApply.TYPE.ADD;
     async.waterfall([function(callback){
-        friendDao.search(username,applyName,callback);
+        if(type==FriendApply.TYPE.ADD){
+            friendDao.search(username,applyName,callback);
+        }else{
+            userDao.isExist(username,callback);
+        }
     },function(user,callback){
         if(!user) return callback(null,Code.USERS.USERNAME_NOT_EXISTS);
         if(type == FriendApply.TYPE.ADD){
@@ -49,10 +53,7 @@ friendService.addRequest = function(username, msg, cb){
  * @param cb
  */
 friendService.getRequestList = function(username,msg, cb){
-    var page = new Page(msg);
-    var ctrn = msg.ctrn || "t";
-    var drtn = (msg.drtn == 1 || msg.drtn==-1) ? msg.drtn : 1;
-    friendDao.getRequestList(username, page,ctrn, drtn, cb);
+    friendDao.getRequestList(username, cb);
 }
 /**
  * 处理好友添加请求
@@ -66,8 +67,8 @@ friendService.handlerAddRequest = function(username,msg, cb){
     var type = msg.type;
     async.waterfall([function(callback){
         friendDao.updateFriendAddApply(username,applyName,type, state,callback);
-    },function(code, callback){
-        if(code == 0){ //请求不存在
+    },function(data, callback){
+        if(!data){ //请求不存在
             callback(null,Code.APPLY.NOT_EXIST);
         }else{
             if(state == FriendApply.STATE.AGREE){ //如果是同意了请求
@@ -110,8 +111,8 @@ friendService.handlerLocationRequest = function(username, msg,cb){
     var id = requestUtils.generateId(username);//创建随机ID
     async.waterfall([function(callback){
         friendDao.updateFriendAddApply(username,applyName,type,state,callback);
-    },function(code,callback){
-        if(code == 0){ //请求不存在
+    },function(data,callback){
+        if(!data){ //请求不存在
             callback(null,Code.APPLY.NOT_EXIST);
         }else {
             msg.id = id;
@@ -139,14 +140,7 @@ friendService.handlerLocationRequest = function(username, msg,cb){
  * @param cb
  */
 friendService.delete = function(username,applyName, cb){
-    async.waterfall([function(callback){ //找用户
-        friendDao.isFriend(username,applyName,callback);
-    },function(friend, callback){
-        if(!friend) return callback(null, Code.FRIEND.NOT_EXIST);
-        friendDao.delete(username,applyName,function(err){
-            callback(err, Code.OK);
-        });
-    }],cb);
+    friendDao.delete(username,applyName,cb);
 }
 /**
  * 获取好友列表
@@ -154,10 +148,7 @@ friendService.delete = function(username,applyName, cb){
  * @param cb
  */
 friendService.friendList = function(username,msg, cb){
-    var page = new Page(msg);
-    var ctrn = msg.ctrn || "lt";
-    var drtn = (msg.drtn == 1 || msg.drtn==-1) ? msg.drtn : -1;
-    friendDao.findPageOfFriends(username, page,ctrn, drtn, cb);
+    friendDao.friendList(username, cb);
 }
 /**
  * 发送消息

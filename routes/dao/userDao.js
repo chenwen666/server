@@ -7,7 +7,7 @@ var User = require("../domain/User");
 var async = require("async");
 var log = require("../../util/logger");
 var Code = require("../../config/Code");
-var redis = require("../database/redis")
+var redis = require("../database/redis");
 var SystemConfig = require("../../config/SystemConfig");
 var requestUtils = require("../../util/requestUtils");
 var Friend = require("../domain/Friend");
@@ -31,30 +31,15 @@ userDao.validateUser = function(username, password, expire, cb){
             callback(null,user);
         }
         if(!user) return callback(new Error(),{code : Code.USERS.USERNAME_NOT_EXISTS});
-        if(!user.p){
-            UserModel.findOne({u:username},function(err,user){
-                if(err) return callback(err,null);
-                validatePassword(user,callback);
-            });
-        }else{
-            validatePassword(user,callback);
-        }
+        validatePassword(user,callback);
     },function(user,callback){
         var token = requestUtils.generateToken(username, expire);
-        var flag = !!user.u;
         var refreshToken = user.rt || requestUtils.generateRefreshToken(username);
-//        var refreshToken = requestUtils.generateRefreshToken(username);
         async.parallel([function(callback){
-            var friends = user.f || [];
-            if(friends instanceof Array){
-                friends = JSON.stringify(friends);
-            }
-            redis.hmset(username,"p", password, "rt", refreshToken,"t",token,"e",expire,"g",user.g || "","b",user.b || "","n",
-                user.n || "","m",user.m || "","em",user.em || "","re",user.re || "","lt",user.lt,"im",user.im || "" ,
-                "a",user.a || "","f",friends || [],callback);
+            redis.hmset(username,"rt",refreshToken,"t",token,"e",expire,"lt",date,callback);
         },function(callback){
-            UserModel.update({u:username},{rt:refreshToken,t:{n:token,e:expire}}, callback);
-        }],function(err, values){
+            UserModel.update({u:username},{rt:refreshToken,t:{n:token,e:expire},lt:date}, callback);
+        }],function(err){
             if(err){
                 log.error("userDao.validateUser update token error:"+err.stack);
                 return callback(err,{code: Code.SYSTEM_ERROR});
@@ -62,19 +47,12 @@ userDao.validateUser = function(username, password, expire, cb){
             var u = new User();
             u.buildFormDb(user);
             u.username = username;
-            callback(null, {code : Code.OK, user : u, token : token, refreshToken : refreshToken});
+            callback(null, {code : Code.OK, user : u, token : token, refreshToken : refreshToken,expire:expire});
         });
     }], function(err, data){
         if(err && (!data || !data.code)){ //如果有错,并且ata为空或data.code为空
             log.error("userDao.validateUser error:"+err.stack);
             return cb(null, Code.SYSTEM_ERROR);
-        }
-        //最后更新时间
-        if(!!data && data.code === Code.OK){
-            UserModel.update({u:username},{lt:date},function(){});
-            redis.hset(username,"lt",date,function(){
-                redis.expire(username,SystemConfig.REDIS_EXPIRE);
-            });
         }
         cb(null, data);
     });
@@ -86,6 +64,7 @@ userDao.validateUser = function(username, password, expire, cb){
  * @cb
  */
 userDao.get = function(username, cb){
+    var self = this;
     async.waterfall([function(callback){
         redis.hgetall(username,function(err, user){
             if(err){
@@ -101,21 +80,7 @@ userDao.get = function(username, cb){
                 log.error("userDao.get 获取用户信息失败:"+err.stack);
                 return callback(err);
             }
-            if(!!user){
-                var friends = user.f || [];
-                if(friends instanceof Array){
-                    friends = JSON.stringify(friends);
-                }
-                user.t = user.t || "";
-                var token = user.t || user.t.n;
-                var expire = user.e || user.t.e;
-                redis.hmset(username,"p", user.p, "rt", user.rt,"t",token,"e",expire,"g",user.g || "","b",user.b || "","n",
-                    user.n || "","m",user.m || "","em",user.em || "","re",user.re || "","lt",user.lt,"im",user.im || "" ,
-                    "a",user.a || "","f",friends || [],function(err){
-                        if(err) log.error("查找用户信息保存redis失败(不影响返回结果):"+err.stack);
-                        redis.expire(username,SystemConfig.REDIS_EXPIRE);
-                    });
-            }
+            self.saveOfRedis(user);
             callback(err, user);
         });
     }],cb);
@@ -143,6 +108,7 @@ userDao.createToken = function(username,refreshToken, expire, cb){
             u.buildFormDb(user);
             u.username = username;
             data.user = u;
+            data.expire = expire;
             callback(err, data);
         });
     }],function(err ,data){
@@ -197,11 +163,12 @@ userDao.validateToken = function(username, token, cb){
  * @param msg
  * @param cb
  */
+
 userDao.regist = function(msg, cb){
     var self = this;
     var username = msg.u;
     async.waterfall([function(callback){
-        self.get(username,callback);
+        self.isExist(username, callback);
     },function(user, callback){
         if(!!user) return callback(new Error(), Code.USERS.USERNAME_ALREADY_REGIST);
         if(!!msg.em){
@@ -225,6 +192,7 @@ userDao.regist = function(msg, cb){
         });
     }],cb);
 }
+
 /**
  * 修改昵称
  * @param username
@@ -259,7 +227,7 @@ userDao.setPassword = function(username, password, cb){
  * @returns {number}
  */
 userDao.findbyEmail = function(email, cb){
-    UserModel.findOne({em : email}, cb);
+    UserModel.findOne({em : email},{_id:0,u:1},  cb);
 }
 /**
  * 根据手机号查找用户
@@ -267,7 +235,7 @@ userDao.findbyEmail = function(email, cb){
  * @returns {number}
  */
 userDao.findbyMobile = function(mobile, cb){
-    UserModel.findOne({m : mobile}, cb);
+    UserModel.findOne({m : mobile},{_id:0,u:1}, cb);
 }
 /**
  * 设置头像地址
@@ -283,6 +251,57 @@ userDao.setPortrait = function(username, path, cb){
     }],cb)
 
 }
+userDao.saveOfRedis = function(user){
+    if(!!user){
+        var friends = user.f || [];
+        if(friends instanceof Array){
+            friends = JSON.stringify(friends);
+        }
+        var applys = user.l || [];
+        if(applys instanceof Array){
+            applys = JSON.stringify(applys);
+        }
+        var handles = user.h || [];
+        if(handles instanceof  Array){
+            handles = JSON.stringify(handles);
+        }
+        var messages = user.ms;
+        if(messages instanceof  Array){
+            messages = JSON.stringify(messages);
+        }
+        user.t = user.t || "";
+        var token = user.t || user.t.n;
+        var expire = user.e || user.t.e;
+        /* u:用户名
+         p 密码   rt 刷新token t:token e:过期时间  g:性别 b:生日 ,n:昵称 m:手机  em:邮箱  re:注册时间  lt:最后更新时间  im:头像
+         a : 地址 f:好友 ,l:请求列表  h:处理结果 ms:消息列表
+         */
+        redis.hmset(user.u,"u",user.u,"p", user.p, "rt", user.rt || "","t",token || "" ,"e",expire || 0,"g",user.g || "","b",user.b || "","n",
+            user.n || "","m",user.m || "","em",user.em || "","re",user.re || "","lt",user.lt || "","im",user.im || "" ,
+            "a",user.a || "","f",friends || [], function(err){
+                if(err) log.error("查找用户信息保存redis失败(不影响返回结果):"+err.stack);
+                redis.expire(user.u,SystemConfig.REDIS_EXPIRE);
+            });
+    }
+}
+/**
+ * 判断用户名是否存在
+ * @param username
+ * @param cb
+ */
+userDao.isExist = function(username, cb){
+    async.waterfall([function(callback){
+        redis.exists(username,callback);
+    },function(code, callback){
+        if(code){
+            return callback(null, code);
+        }else{
+            UserModel.findOne({u:username},{u:1,_id:0},function(err, data){
+                callback(err, data);
+            })
+        }
+    }],cb)
+}
 /**
  * 计算过期时间
  * @param expire
@@ -292,5 +311,4 @@ function getExpireTime(expire){
     expire = new Date().getTime()+expire;
     return expire;
 }
-
 module.exports = userDao;

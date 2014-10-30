@@ -18,7 +18,10 @@ var server = http.createServer(function(req, res){
     for(var i=0;i<count;i++){
         var index = Math.floor(Math.random()*18);
         for(var j= 0,l=arr.length;j<l;j++){
-            if(arr[j]==index)break;
+            if(arr[j]==index){
+                i--;
+                break;
+            }
         }
         if(j==arr.length) {
             arr.push(index);
@@ -35,21 +38,18 @@ var server = http.createServer(function(req, res){
     }
     async.waterfall([function(callback){
         if(existIndex(0)){
-            log.info("----------------注册-------------------");
             regist(callback);
         }else{
             callback(null,username, password);
         }
     },function(username,password,callback){
         if(existIndex(1)){
-            log.info("----------------登陆-------------------");
             login(username,password, callback);
         }else{
             callback(null,{user : {username : username, password : password},refreshToken : "abc"});
         }
     },function(data,callback){
         if(existIndex(2)){
-            log.info("----------------刷新token-------------------");
             var re = data.refreshToken;
             var username = "";
             if(!!data.user){
@@ -62,7 +62,6 @@ var server = http.createServer(function(req, res){
 
     },function(data,callback){
         if(existIndex(3)){
-            log.info("----------------修改昵称-------------------");
             if(!!data.user) username = data.user.username || username;
             var token = data.token;
             setNickName(username,"1111111",function(err){
@@ -74,7 +73,6 @@ var server = http.createServer(function(req, res){
 
     },function(username,callback){
         if(existIndex(4)){
-            log.info("----------------修改修改密码-------------------");
             setPassword(username,"1",function(err){
                 callback(err,username);
             })
@@ -83,7 +81,6 @@ var server = http.createServer(function(req, res){
         }
     },function(username ,callback){
         if(existIndex(5)){
-            log.info("----------------添加申请-------------------");
             addRequest(username,function(err){
                 callback(err, username);
             })
@@ -92,7 +89,6 @@ var server = http.createServer(function(req, res){
         }
     },function(username, callback){
         if(existIndex(6)){
-            log.info("----------------申请列表-------------------");
             requestList(username,function(err,data){
                 callback(err, username,data.content);
             })
@@ -101,7 +97,6 @@ var server = http.createServer(function(req, res){
         }
     },function(username ,content,callback){
         if(existIndex(7)){
-            log.info("----------------处理请求-------------------");
             var applyName = "";
             var state = 1;
             var type =1;
@@ -120,7 +115,6 @@ var server = http.createServer(function(req, res){
         }
     },function(username, applyName, id, callback){
         if(existIndex(8)){
-            log.info("----------------更新地理位置-------------------");
             updateLocation(username,applyName,id,function(err,data){
                 callback(err, username,id);
             })
@@ -129,7 +123,6 @@ var server = http.createServer(function(req, res){
         }
     },function(username,  id,callback){
         if(existIndex(9)){
-            log.info("----------------断开连接-------------------");
             disconnect(id,function(err){
                 callback(err, username);
             })
@@ -138,7 +131,6 @@ var server = http.createServer(function(req, res){
         }
     },function(username,callback){
         if(existIndex(10)){
-            log.info("----------------发送消息-------------------");
             sendMessage(username,"11111111",function(err){
                 callback(err, username);
             })
@@ -148,7 +140,6 @@ var server = http.createServer(function(req, res){
 
     },function(username,callback){
         if(existIndex(11)){
-            log.info("----------------消息列表-------------------");
             messageList(username,function(err, data){
                 callback(err,username);
             })
@@ -157,7 +148,6 @@ var server = http.createServer(function(req, res){
         }
 
     },function(username, callback){
-        log.info("----------------好友列表-------------------");
         if(existIndex(12)){
             friendList(username,function(err,data){
                 if(err){
@@ -170,7 +160,6 @@ var server = http.createServer(function(req, res){
         }
     },function(username, content,callback){
         if(existIndex(13)){
-            log.info("----------------删除好友-------------------");
             var applyName = "";
             if(!!content && content.length>=1){
                 applyName = content[0].username;
@@ -183,7 +172,6 @@ var server = http.createServer(function(req, res){
         }
     },function(username,callback){
         if(existIndex(14)){
-            log.info("----------------获取场景数据-------------------");
             getSituation("00:11:78:87:50:E9",function(err){
                 callback(err, username);
             })
@@ -192,7 +180,6 @@ var server = http.createServer(function(req, res){
         }
     },function(username, callback){
         if(existIndex(15)){
-            log.info("----------------处理结果-------------------");
             handleList(username,function(err){
                 callback(err, username);
             })
@@ -201,7 +188,6 @@ var server = http.createServer(function(req, res){
         }
     },function(username, callback){
         if(existIndex(16)){
-            log.info("----------------搜索用户-------------------");
             search(username,Math.floor((Math.random()*100000))+"",function(err){
                 callback(err, username);
             })
@@ -209,7 +195,8 @@ var server = http.createServer(function(req, res){
             callback(null,username);
         }
     }],function(err){
-           res.end("200");
+        log.info("-----------------------------成功-----------------------");
+        res.end("200");
     })
     /*
     async.waterfall([function(callback){

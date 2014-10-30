@@ -21,15 +21,13 @@ Friend.prototype.buildFormDb = function(opts){
         this.mobile = opts.m;
         this.email = opts.em || opts.e;
         this.nickName = opts.n;
-        this.birthday = utils.parseTime(opts.b);
-        this.registTime = utils.parseTime(opts.re);
+        this.birthday = opts.b;
+        this.registTime = opts.re;
         this.iconHash = opts.i;
         this.address = opts.a;
         this.deviceType = opts.dt;
-        this.lastOpenTime = utils.parseTime(opts.lt);
-        if(!!opts.at){
-            this.addTime = utils.parseTime(opts.at);
-        }
+        this.lastOpenTime = opts.lt;
+        this.addTime = this.addTime || opts.at;
     }
     return this;
 }

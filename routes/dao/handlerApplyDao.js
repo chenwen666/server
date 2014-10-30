@@ -40,7 +40,7 @@ handlerApplyDao.insert = function(username,msg,cb){
  */
 handlerApplyDao.handlerList = function(username, cb){
     async.waterfall([function(callback){
-        UserModel.findOne({u:username},null,function(err, results){
+        UserModel.findOne({u:username},{h:1},function(err, results){
             if(err) return callback(err);
             if(!!results && !!results.h){
                 callback(null, results.h);
@@ -60,11 +60,8 @@ handlerApplyDao.handlerList = function(username, cb){
         callback(null, content);
     }],function(err,list){
         UserModel.update({u:username},{h:[]},function(err){
-            if(err){
-                log.error("handlerApplyDao.handlerList error:"+err.stack);
-            }
+            cb(err, list);
         });
-        cb(null, list);
     });
 
 }

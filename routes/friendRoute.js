@@ -14,9 +14,6 @@ var handlerApplyService = require("./services/handlerApplyService");
 var FriendApply = require("./domain/FriendApply");
 var auth = require("./auth/auth");
 
-
-router.use("*",auth.authLogin);
-
 router.get("/search",auth.friendAuth(["applyName"]), searchUser);  //搜索用户
 
 router.post("/request",auth.friendAuth(["applyName","type"]),addRequest); //添加申请
@@ -54,7 +51,7 @@ function searchUser(req, res,next){
             return requestUtils.send(res, Code.SYSTEM_ERROR);
         }
         if(!user){
-            return requestUtils.send(res, Code.USERS.USERNAME_NOT_EXISTS)
+            return requestUtils.send(res, Code.USERS.USERNAME_NOT_EXISTS);
         }
         requestUtils.send(res,Code.OK,{user:user})
     });
@@ -83,12 +80,12 @@ function addRequest(req, res, next){
  */
 function getAddRequestList(req, res, next){
     var username = req.session.user.u;
-    friendService.getRequestList(username, req.query, function(err, page){
+    friendService.getRequestList(username, req.query, function(err, content){
         if(err){
             log.error(username+"获取好友申请添加列表失败:"+err.stack);
             return requestUtils.send(res, Code.SYSTEM_ERROR);
         }
-        requestUtils.send(res, Code.OK, {page:page});
+        requestUtils.send(res, Code.OK, {content:content});
     });
 }
 /**
@@ -171,12 +168,12 @@ function sendLocationRequest(req, res, next){
 function frindList(req, res, next){
     try {
         var username = req.session.user.u;
-        friendService.friendList(username, req.query, function (err, page) {
+        friendService.friendList(username, req.query, function (err, content) {
             if (err) {
                 log.error(username + "获取好友列表失败:" + err.stack);
                 return requestUtils.send(res, Code.SYSTEM_ERROR);
             }
-            requestUtils.send(res, Code.OK, {page: page});
+            requestUtils.send(res, Code.OK, {content: content});
         });
     }catch(err){
         requestUtils.send(res. Code.SYSTEM_ERROR);
@@ -194,12 +191,12 @@ function removeFriend(req, res, next){
     try {
         var username = req.session.user.u;
         var delName = req.body.delName;
-        friendService.delete(username, delName, function (err, code) {
+        friendService.delete(username, delName, function (err) {
             if (err) {
                 log.error(username + "删除好友:" + delName + "失败" + err.stack);
                 return requestUtils.send(res, Code.SYSTEM_ERROR);
             }
-            requestUtils.send(res, code);
+            requestUtils.send(res, Code.OK);
         });
     }catch(err){
         requestUtils.send(res. Code.SYSTEM_ERROR);

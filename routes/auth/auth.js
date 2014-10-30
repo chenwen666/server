@@ -35,7 +35,7 @@ module.exports.friendAuth = function(args){
             var msg = utils.validateParameters(body,args);
             if(msg) return requestUtils.send(res, Code.MISSING_PARAMTER,msg);
             body.username = username;
-            validateTokken(res,body,next);
+            validateTokken(req, res,body,next);
         }catch(e){
             log.error("auth.frinedAuth.error:"+err.stack);
             requestUtils.send(res, Code.SYSTEM_ERROR);
@@ -84,17 +84,25 @@ module.exports.authLogin = function(req, res, next){
         requestUtils.send(res, Code.SYSTEM_ERROR);
     }
 }
-
-function validateTokken(res,body,next){
+/**
+ * 验证用户登录或者token
+ * @param req
+ * @param res
+ * @param body
+ * @param next
+ * @returns {*}
+ */
+function validateTokken(req, res,body,next){
     try {
-        userService.validateToken(body, function (err, code) {
-            if (err) return requestUtils.send(res, Code.SYSTEM_ERROR);
-            if (code == Code.OK) {
-                next();
-            } else {
-                requestUtils.send(res, code);
-            }
-        });
+        var user = req.session.user;
+        if(!user) return requestUtils.send(res, Code.USERS.NOT_LOGIN);
+        var username = body.username;
+        var token = body.token;
+        var flag = new Date().getTime() - user.e > 0
+        if(username != user.u || token!=user.t || flag){
+           return  requestUtils.send(res, Code.TOKEN.INVALID);
+        }
+        next();
     }catch(err){
         log.error("auth.registAuth.validateToken:"+err.stack);
         requestUtils.send(res, Code.SYSTEM_ERROR);
