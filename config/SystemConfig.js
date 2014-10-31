@@ -9,8 +9,8 @@ module.exports = {
     SIGN_ERROR : "签名错误",
     SECRET : "" ,//秘钥
 //     MONGOOSE_HOST : "mongodb://192.168.1.33:27017,192.168.1.33:27018/server?replicaSet=MF&readPreference=secondaryPreferred&&slaveOk=true"",        //mongoose host
-    MONGOOSE_HOST : "127.0.0.1",        //mongoose host
-    REDIS_HOST : "127.0.0.1",        //redis host
+    MONGOOSE_HOST : "192.168.1.33",        //mongoose host
+    REDIS_HOST : "192.168.1.33",        //redis host
     REDIS_PORT : 6379,
     MONGOOSE_DATABASE : "server",     //mongoose库名
     REDIS_EXPIRES : 86400,    //redis过期时间一天,单位秒
