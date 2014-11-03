@@ -48,12 +48,12 @@ function searchUser(req, res,next){
     friendService.search(username, applyName,function(err, user){
         if(err){
             log.error(username+"搜索用户:"+applyName+"失败:"+err.stack);
-            return requestUtils.send(res, Code.SYSTEM_ERROR);
+            return requestUtils.send(req, res, Code.SYSTEM_ERROR);
         }
         if(!user){
-            return requestUtils.send(res, Code.USERS.USERNAME_NOT_EXISTS);
+            return requestUtils.send(req, res, Code.USERS.USERNAME_NOT_EXISTS);
         }
-        requestUtils.send(res,Code.OK,{user:user})
+        requestUtils.send(req, res,Code.OK,{user:user})
     });
 }
 /**
@@ -67,9 +67,9 @@ function addRequest(req, res, next){
     friendService.addRequest(username, req.body,function(err,code){
         if(err){
             log.error(username+"请求添加"+req.body.applyName+"为好友失败:"+err.stack);
-            return requestUtils.send(res, Code.SYSTEM_ERROR);
+            return requestUtils.send(req, res, Code.SYSTEM_ERROR);
         }
-        requestUtils.send(res, code);
+        requestUtils.send(req, res, code);
     });
 }
 /**
@@ -83,9 +83,9 @@ function getAddRequestList(req, res, next){
     friendService.getRequestList(username, req.query, function(err, content){
         if(err){
             log.error(username+"获取好友申请添加列表失败:"+err.stack);
-            return requestUtils.send(res, Code.SYSTEM_ERROR);
+            return requestUtils.send(req, res, Code.SYSTEM_ERROR);
         }
-        requestUtils.send(res, Code.OK, {content:content});
+        requestUtils.send(req, res, Code.OK, {content:content});
     });
 }
 /**
@@ -101,17 +101,17 @@ function handlerRequest(req, res, next){
         friendService.handlerAddRequest(username,req.body,function(err,code){
             if(err){
                 log.error(username+"处理:"+req.body.applyName+"添加为好友失败"+err.stack);
-                return requestUtils.send(res,Code.SYSTEM_ERROR);
+                return requestUtils.send(req, res,Code.SYSTEM_ERROR);
             }
-            requestUtils.send(res,code);
+            requestUtils.send(req, res,code);
         });
     }else if(type == FriendApply.TYPE.LOCATION){
         friendService.handlerLocationRequest(username,req.body,function(err,code,id){
             if(err){
                 log.error(username+"处理:"+req.body.applyName+"添加为好友失败"+err.stack);
-                return requestUtils.send(res,Code.SYSTEM_ERROR);
+                return requestUtils.send(req, res,Code.SYSTEM_ERROR);
             }
-            requestUtils.send(res,code,{locationId:id});
+            requestUtils.send(req, res,code,{locationId:id});
         });
     }else{
         res.send("type值目前只能是1或者2");
@@ -129,12 +129,12 @@ function handlerList(req, res, next){
         handlerApplyService.handlerList(username, function (err, content) {
             if (err) {
                 log.error(username + "获取处理结果列表失败:" + err.stack);
-                return requestUtils.send(res, Code.SYSTEM_ERROR);
+                return requestUtils.send(req, res, Code.SYSTEM_ERROR);
             }
-            requestUtils.send(res, Code.OK, {content: content});
+            requestUtils.send(req, res, Code.OK, {content: content});
         })
     }catch(err){
-        requestUtils.send(res. Code.SYSTEM_ERROR);
+        requestUtils.send(req, res. Code.SYSTEM_ERROR);
         log.error("friendRouter.error:"+err.stack);
     }
 }
@@ -150,12 +150,12 @@ function sendLocationRequest(req, res, next){
         localtionService.addRequest(username, req.body, function (err) {
             if (err) {
                 log.error(username + "向" + req.body.applyName + "发送定位请求失败:" + err.stack);
-                return requestUtils.send(res, Code.SYSTEM_ERROR)
+                return requestUtils.send(req, res, Code.SYSTEM_ERROR)
             }
-            requestUtils.send(res, Code.OK);
+            requestUtils.send(req, res, Code.OK);
         })
     }catch(err){
-        requestUtils.send(res. Code.SYSTEM_ERROR);
+        requestUtils.send(req, res. Code.SYSTEM_ERROR);
         log.error("friendRouter.sendLocationRequest:"+err.stack);
     }
 }
@@ -171,12 +171,12 @@ function frindList(req, res, next){
         friendService.friendList(username, req.query, function (err, content) {
             if (err) {
                 log.error(username + "获取好友列表失败:" + err.stack);
-                return requestUtils.send(res, Code.SYSTEM_ERROR);
+                return requestUtils.send(req, res, Code.SYSTEM_ERROR);
             }
-            requestUtils.send(res, Code.OK, {content: content});
+            requestUtils.send(req, res, Code.OK, {content: content});
         });
     }catch(err){
-        requestUtils.send(res. Code.SYSTEM_ERROR);
+        requestUtils.send(req, res. Code.SYSTEM_ERROR);
         log.error("friendRouter.frindList:"+err.stack);
     }
 }
@@ -194,12 +194,12 @@ function removeFriend(req, res, next){
         friendService.delete(username, delName, function (err) {
             if (err) {
                 log.error(username + "删除好友:" + delName + "失败" + err.stack);
-                return requestUtils.send(res, Code.SYSTEM_ERROR);
+                return requestUtils.send(req, res, Code.SYSTEM_ERROR);
             }
-            requestUtils.send(res, Code.OK);
+            requestUtils.send(req,res, Code.OK);
         });
     }catch(err){
-        requestUtils.send(res. Code.SYSTEM_ERROR);
+        requestUtils.send(req, res, Code.SYSTEM_ERROR);
         log.error("friendRouter.removeFriend:"+err.stack);
     }
 }
@@ -215,12 +215,12 @@ function updatePosition(req, res, next){
         localtionService.updatePosition(username, req.body, function (err, code, data) {
             if (err) {
                 log.error(username + "更新地理位置失败:" + err.stack);
-                return requestUtils.send(res, Code.SYSTEM_ERROR);
+                return requestUtils.send(req, res, Code.SYSTEM_ERROR);
             }
-            requestUtils.send(res, code, data);
+            requestUtils.send(req, res, code, data);
         });
     }catch(err){
-        requestUtils.send(res. Code.SYSTEM_ERROR);
+        requestUtils.send(req,res. Code.SYSTEM_ERROR);
         log.error("friendRouter.updatePosition:"+err.stack);
     }
 }
@@ -238,15 +238,15 @@ function getPosition(req, res,next){
         localtionService.getPosition(id, applyName, function (err, position) {
             if (err) {
                 log.error(username + "获取好友地理位置失败" + err.stack);
-                return requestUtils.send(res, Code.SYSTEM_ERROR);
+                return requestUtils.send(req, res, Code.SYSTEM_ERROR);
             }
             if (!position) {
-                return requestUtils.send(res, Code.CONNECTION.NOT_BUILD);
+                return requestUtils.send(req, res, Code.CONNECTION.NOT_BUILD);
             }
-            requestUtils.send(res, Code.OK, {position: position});
+            requestUtils.send(req, res, Code.OK, {position: position});
         });
     }catch(err){
-        requestUtils.send(res. Code.SYSTEM_ERROR);
+        requestUtils.send(req, res. Code.SYSTEM_ERROR);
         log.error("friendRouter.getPosition:"+err.stack);
     }
 }
@@ -262,13 +262,13 @@ function disconnect(req, res, next){
         localtionService.disconnect(id, function (err, data) {
             if (err) {
                 log.error("定位断开连接失败" + err.stack);
-                return requestUtils.send(res, Code.SYSTEM_ERROR);
+                return requestUtils.send(req, res, Code.SYSTEM_ERROR);
             }
-            if (data == 0) return requestUtils.send(res, Code.CONNECTION.NOT_BUILD);
-            requestUtils.send(res, Code.OK);
+            if (data == 0) return requestUtils.send(req, res, Code.CONNECTION.NOT_BUILD);
+            requestUtils.send(req, res, Code.OK);
         });
     }catch(err){
-        requestUtils.send(res. Code.SYSTEM_ERROR);
+        requestUtils.send(req, res. Code.SYSTEM_ERROR);
         log.error("friendRouter.disconnect:"+err.stack);
     }
 }
@@ -286,12 +286,12 @@ function sendMessage(req, res, next){
         friendService.sendMessage(username, applyName, msg, function (err, code) {
             if (err) {
                 log.error("发送消息失败" + err.stack);
-                return requestUtils.send(res, Code.SYSTEM_ERROR);
+                return requestUtils.send(req, res, Code.SYSTEM_ERROR);
             }
-            requestUtils.send(res, code);
+            requestUtils.send(req, res, code);
         });
     }catch(err){
-        requestUtils.send(res. Code.SYSTEM_ERROR);
+        requestUtils.send(req, res. Code.SYSTEM_ERROR);
         log.error("friendRouter.sendMessage:"+err.stack);
     }
 }
@@ -308,12 +308,12 @@ function messageList(req, res, next){
         friendService.messageList(username, function (err, msgList) {
             if (err) {
                 log.error("获取消息列表失败:" + err.stack);
-                return requestUtils.send(res, Code.SYSTEM_ERROR);
+                return requestUtils.send(req, res, Code.SYSTEM_ERROR);
             }
-            requestUtils.send(res, Code.OK, {list: msgList});
+            requestUtils.send(req, res, Code.OK, {list: msgList});
         });
     }catch(err){
-        requestUtils.send(res. Code.SYSTEM_ERROR);
+        requestUtils.send(req, res. Code.SYSTEM_ERROR);
         log.error("friendRouter.messageList:"+err.stack);
     }
 }

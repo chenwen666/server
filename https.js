@@ -19,8 +19,8 @@ var log = require("./util/logger");
 var situationRoute = require("./routes/situationRoute");
 
 var https = require('https');
-var key = fs.readFileSync('./config/server_nopass.key');
-var cert = fs.readFileSync('./config/server.crt');
+var key = fs.readFileSync('./key/server_nopass.key');
+var cert = fs.readFileSync('./key/server.crt');
 var https_options = {
     key: key,
     cert: cert
@@ -30,9 +30,11 @@ var app = express();
 
 
 // view engine setup
+/*
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html',require("ejs").renderFile);
 app.set('view engine', 'html');
+*/
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
@@ -41,8 +43,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({
     store : new RedisStore({
-        host : "127.0.0.1",
-        port : 6379,
+        host : SystemConfig.REDIS_HOST,
+        port : SystemConfig.REDIS_PORT,
         ttl : SystemConfig.REDIS_EXPIRES
     }),
     secret : "server"
@@ -50,7 +52,7 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));
 //app.use(bodyParser({uploadDir:"./uploads"}));
 app.use(require('connect-multiparty')({uploadDir:"./uploads"}));
-app.use('/', routes);
+//app.use('/', routes);
 app.use('/oauth2', oauth2Route);
 app.use('/friends', friendRoute);
 app.use("/test",require("./routes/test"));
@@ -87,12 +89,7 @@ app.use(function(err, req, res, next) {
 // production error handler
 // no stacktraces leaked to user
 
-server = https.createServer(https_options, app).listen(3001,function(){
+server = https.createServer(https_options, app).listen(3000,function(){
     log.info('Express server listening on port ' + server.address().port);
 });
-/*
- var server = app.listen(3000, function() {
- log.info('Express server listening on port ' + server.address().port);
- });
- */
 module.exports = app;

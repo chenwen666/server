@@ -103,7 +103,7 @@ userService.sendEmail = function(username, cb){
         if(!user) return callback(null, Code.USERS.NOT_EXIST);
         var email = user.em;
         if(!email) return callback(null, Code.USERS.EMAIL_NOT_BIND);
-        emailUtils.send(email,"用户激活","用户注册激活测试邮件",function(err){
+        emailUtils.send(email,"用户激活","用户注册激活测试邮件,激活码为:"+new Date().getTime(),function(err){
             if(err) return callback(err, null);
             callback(null, Code.OK);
         })

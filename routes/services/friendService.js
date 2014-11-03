@@ -78,12 +78,12 @@ friendService.handlerAddRequest = function(username,msg, cb){
                     if(!user) callback(null,Code.APPLY.TARGET_NOT_EXIST);
                     async.parallel([function(callback){
                         if(user.isFriend){//如果是好友username通过applyName  那applyName好友里肯定没有username 所以只要单向添加
-                            friendDao.addFriend(applyName,username,callback);
+                            friendDao.add(applyName,username,callback);
                         }else{//双向添加
                             async.parallel([function(callback){
-                                friendDao.addFriend(username, applyName,callback);
+                                friendDao.add(username, applyName,callback);
                             },function(callback){
-                                friendDao.addFriend(applyName,username,callback);
+                                friendDao.add(applyName,username,callback);
                             }],callback)
                         }
                     },function(callback){

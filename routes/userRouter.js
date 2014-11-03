@@ -13,7 +13,7 @@ var userService = require("./services/userService");
 var fs = require("fs");
 var async = require("async");
 var auth = require("./auth/auth");
-var logFilter = require("./auth/logFilter");
+var logFilter = require("./filter/logFilter");
 var sign = require("./auth/sign");
 
 router.post("/regist",sign({username:true,password:true,timestrap:true,nickName:true,email:false,mobile:false}),regist);
@@ -42,13 +42,13 @@ function regist(req, res){
         userService.regist(body, function (err, code) {
             if (code == Code.SYSTEM_ERROR) {
                 log.error(body.username + "注册失败:" + err.stack);
-                return requestUtils.send(res, Code.SYSTEM_ERROR);
+                return requestUtils.send(req, res, Code.SYSTEM_ERROR);
             }
-            requestUtils.send(res, code);
+            requestUtils.send(req, res, code);
         })
     }catch(err){
         log.error("userRouter.regist error:"+err.stack);
-        requestUtils.send(req, Code.SYSTEM_ERROR);
+        requestUtils.send(req,res, Code.SYSTEM_ERROR);
     }
 }
 
@@ -65,13 +65,13 @@ function setNickName(req, res, next){
         userService.setNickName({username: username, nickName: nickName}, function (err) {
             if (err) {
                 log.error(req.session.user.u + "修改昵称失败:" + err.stack);
-                return requestUtils.send(res, Code.SYSTEM_ERROR)
+                return requestUtils.send(req, res, Code.SYSTEM_ERROR)
             }
-            requestUtils.send(res, Code.OK);
+            requestUtils.send(req, res, Code.OK);
         });
     }catch(err){
         log.error("userRouter.setnickName error:"+err.stack);
-        requestUtils.send(req, Code.SYSTEM_ERROR);
+        requestUtils.send(req, res, Code.SYSTEM_ERROR);
     }
 }
 
@@ -88,13 +88,13 @@ function setPassword(req, res, next){
         userService.setPassword({username: username, password: password}, function (err) {
             if (err) {
                 log.error(req.session.user.u + "修改密码失败:" + err.stack);
-                return requestUtils.send(res, Code.SYSTEM_ERROR)
+                return requestUtils.send(req, res, Code.SYSTEM_ERROR)
             }
-            requestUtils.send(res, Code.OK);
+            requestUtils.send(req, res, Code.OK);
         });
     }catch (err){
         log.error("userRouter.setPassword error:"+err.stack);
-        requestUtils.send(req, Code.SYSTEM_ERROR);
+        requestUtils.send(req,res, Code.SYSTEM_ERROR);
     }
 }
 /**
@@ -118,13 +118,13 @@ function sendEmail(req, res, next){
         userService.sendEmail(username, function (err, code) {
             if (err) {
                 log.error(req.session.user.u + "发送邮件失败:" + err.stack);
-                return requestUtils.send(res, Code.SYSTEM_ERROR)
+                return requestUtils.send(req, res, Code.SYSTEM_ERROR)
             }
-            requestUtils.send(res, code)
+            requestUtils.send(req, res, code)
         });
     }catch(err){
         log.error("userRouter.sendEmail error:"+err.stack);
-        requestUtils.send(req, Code.SYSTEM_ERROR);
+        requestUtils.send(req,res, Code.SYSTEM_ERROR);
     }
 }
 /**
@@ -150,13 +150,13 @@ function setPortrait(req, res, next){
         }], function (err) {
             if (err) {
                 log.error(req.session.user.u + "设置头像失败:" + err.stack);
-                return requestUtils.send(res, Code.SYSTEM_ERROR);
+                return requestUtils.send(req, res, Code.SYSTEM_ERROR);
             }
-            requestUtils.send(res, Code.OK);
+            requestUtils.send(req, res, Code.OK);
         })
     }catch(err){
         log.error("userRouter.setPortrait error:"+err.stack);
-        requestUtils.send(req, Code.SYSTEM_ERROR);
+        requestUtils.send(req, res, Code.SYSTEM_ERROR);
     }
 }
 module.exports = router;

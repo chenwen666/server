@@ -96,7 +96,7 @@ friendDao.getRequestList = function(username,cb){
  * @param type
  * @param cb
  */
-friendDao.addFriend = function(username, applyName, cb){
+friendDao.add = function(username, applyName, cb){
     var date = new Date();
     async.parallel([function(callback){
         //更新rids

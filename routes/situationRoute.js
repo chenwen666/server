@@ -13,10 +13,10 @@ var auth = require("./auth/auth");
 
 router.post("/situation",auth.authLogin,auth.friendAuth(),function(req, res){
     var msg = utils.validateParameters(req.body,["devId"]);
-    if(msg) return requestUtils.send(res, Code.MISSING_PARAMTER, msg);
+    if(msg) return requestUtils.send(req, res, Code.MISSING_PARAMTER, msg);
     situationService.findById(req.body,function(err, doc, device){
         if(err) return requestUtils(res, Code.SYSTEM_ERROR);
-        requestUtils.send(res,Code.OK,{situation:doc,device:device});
+        requestUtils.send(req,res,Code.OK,{situation:doc,device:device});
     });
 });
 

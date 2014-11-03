@@ -12,17 +12,17 @@ module.exports = function(args){
             var body = req.method =="GET" ? req.query : req.body;
             var msg = utils.validateParameters(body, args);
             if(msg){
-                return requestUtils.send(res, Code.MISSING_PARAMTER,msg);
+                return requestUtils.send(req, res, Code.MISSING_PARAMTER,msg);
             }
             //验证时间戳
-            if(new Date().getTime() - body.timestamp > SystemConfig.SIGN_EXPIRE) return requestUtils.send(res, Code.SIGN_AREADY_OVERDUE);
+            if(new Date().getTime() - body.timestamp > SystemConfig.SIGN_EXPIRE) return requestUtils.send(req, res, Code.SIGN_AREADY_OVERDUE);
             //计算签名值
             var sign = requestUtils.getSign(args,body);
-            if(sign != body.sign) return requestUtils.send(res, Code.SIGN_ERROR);
+            if(sign != body.sign) return requestUtils.send(req, res, Code.SIGN_ERROR);
             next();
         }catch(e){
             log.error(req.body.username+":"+req.url+'error:'+e.stack);
-            requestUtils.send(res,Code.SYSTEM_ERROR);
+            requestUtils.send(req, res,Code.SYSTEM_ERROR);
         }
     }
 }

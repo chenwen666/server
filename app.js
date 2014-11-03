@@ -17,6 +17,7 @@ var app = express();
 
 
 // view engine setup
+
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html',require("ejs").renderFile);
 app.set('view engine', 'html');
@@ -28,8 +29,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({
     store : new RedisStore({
-        host : "127.0.0.1",
-        port : 6379,
+        host : SystemConfig.REDIS_HOST,
+        port : SystemConfig.REDIS_PORT,
         ttl : SystemConfig.REDIS_EXPIRES
     }),
     secret : "server"

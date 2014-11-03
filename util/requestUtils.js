@@ -5,7 +5,7 @@ var Code = require("../config/Code");
 var SystemConfig = require("../config/SystemConfig.js");
 var fs = require("fs");
 var crypto = require("crypto");
-var secret = require('fs').readFileSync("./config/server.key");
+var secret = require('fs').readFileSync("./key/server.key");
 var log = require("../util/logger");
 //var bcrypt = require("bcrypt");
 /**
@@ -14,7 +14,7 @@ var log = require("../util/logger");
  * @param code
  * @param data
  */
-module.exports.send =function(res, code, data){
+module.exports.send =function(req, res, code, data){
     if(typeof data == "string"){
         var msg = data;
         data = {};
@@ -23,8 +23,6 @@ module.exports.send =function(res, code, data){
     data = data || {};
     data.code = code;
     data.msg = data.msg || getMessage(code);
-//    log.info(JSON.stringify(data));
-    console.log(JSON.stringify(data));
     res.send(data);
 }
 /**
@@ -55,9 +53,7 @@ module.exports.getSign = function(args, msg){
     //首尾加上秘钥
     signValue = SystemConfig.SECRET + signValue + SystemConfig.SECRET;
     signValue = encodeURIComponent(signValue);
-//    log.info('qianmingqian:'+signValue);
     signValue = crypto.createHash('sha256').update(signValue).digest('hex').toUpperCase();
-//    log.info("qianminghou:"+signValue);
     return signValue;
 }
 /**

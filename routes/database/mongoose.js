@@ -13,5 +13,6 @@ db.on("error",function(err){
 db.once("open", function(){
     logger.info("mongodb已连接");
 });
+
 module.exports.db = db;
 module.exports.mongo = mongo;
