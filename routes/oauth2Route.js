@@ -8,6 +8,8 @@ var SystemConfig = require("../config/SystemConfig");
 var userService = require("./services/userService");
 var auth = require("./auth/auth");
 var logFilter = require("./filter/logFilter");
+var statFilter = require("./filter/StatFilter");
+var User = require("./domain/User");
 var sign = require("./auth/sign");
 /* GET users listing. */
 
@@ -54,6 +56,7 @@ function login(req, res, body){
                 }else{
                     requestUtils.send(req, res, Code.OK, data);
                 }
+                statFilter.add({u:req.body.username,lt : new Date().getTime(),s:User.ON_LINE},function(){});
             }else{
                 requestUtils.send(req, res, data.code);
             }
@@ -81,6 +84,7 @@ function createToken(req, res){
             }
             setSession(req,{u:req.body.username,t:data.token,e:data.expire});
             requestUtils.send(req, res,data.code,{token:data.token,user:data.user});
+            statFilter.add({u:req.body.username,lt : new Date().getTime(),s:User.ON_LINE},function(){});
         });
     }catch(e){
         log.error(req.body.username+":"+req.url+'error:'+e.stack);

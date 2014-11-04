@@ -95,6 +95,9 @@ router.get("/user/email/auth",function(req, res){
 router.get("/user/email/send",function(req, res){
     res.render("sendEmail");
 });
+router.get("/friends/list/state",function(req, res){
+    res.render("friendState");
+});
 router.get("/user/setPortrait",function(req, res){
     res.render("setPortrait");
 });

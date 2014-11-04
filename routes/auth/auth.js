@@ -6,6 +6,7 @@ var requestUtils = require("../../util/requestUtils");
 var userService = require("../services/userService");
 var log = require("../../util/logger");
 var utils = require("../../util/utils");
+var statFilter = require("../filter/StatFilter");
 /**
  * 场景token验证
  * @param req
@@ -78,6 +79,7 @@ module.exports.authLogin = function(req, res, next){
     try {
         var user = req.session.user;
         if (!user) return requestUtils.send(req, res, Code.USERS.NOT_LOGIN);
+        statFilter.set(user.u,"lt",new Date().getTime(),function(){});
         next();
     }catch(err){
         log.error("auth.registAuth.authLogin:"+err.stack);

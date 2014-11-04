@@ -11,8 +11,11 @@ var SystemConfig = require("../config/SystemConfig");
 var friendService = require("./services/friendService");
 var localtionService = require("./services/locationService");
 var handlerApplyService = require("./services/handlerApplyService");
+var statFilter = require("./filter/StatFilter");
 var FriendApply = require("./domain/FriendApply");
 var auth = require("./auth/auth");
+
+router.use("*",auth.authLogin);
 
 router.get("/search",auth.friendAuth(["applyName"]), searchUser);  //搜索用户
 
@@ -35,6 +38,8 @@ router.post("/location/disconnect",auth.friendAuth(["id"]),disconnect); //断开
 router.post("/message",auth.friendAuth(["applyName","msg"]), sendMessage); //发送消息
 
 router.get("/message/list",auth.friendAuth(),messageList); //获取消息列表
+
+router.get("/list/state",auth.friendAuth(["names"]),listState);
 
 /**
  * 搜索用户
@@ -315,6 +320,24 @@ function messageList(req, res, next){
     }catch(err){
         requestUtils.send(req, res. Code.SYSTEM_ERROR);
         log.error("friendRouter.messageList:"+err.stack);
+    }
+}
+/**
+ * 好友列表状态
+ * @param req
+ * @param res
+ * @param next
+ */
+function listState(req, res, next){
+    try{
+        var names = JSON.parse(req.query.names);
+        statFilter.friendState(names,function(err, data){
+            if(err) return  requestUtils.send(req, res,Code.SYSTEM_ERROR);
+            requestUtils.send(req, res, Code.OK,data);
+        })
+    }catch(err){
+        requestUtils.send(req, res. Code.SYSTEM_ERROR);
+        log.error("friendRouter.listState:"+err.stack);
     }
 }
 module.exports = router;

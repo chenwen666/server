@@ -62,4 +62,12 @@ Object.defineProperties(User.GENDER_VALUE,{
         enumerable : true
     }
 })
+Object.defineProperty(User,"ON_LINE",{ //在线状态
+    writable : false,
+    value : 1
+});
+Object.defineProperty(User,"OFF_LINE",{
+    writable : true,
+    value : 2
+})
 module.exports = User;

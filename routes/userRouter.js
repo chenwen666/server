@@ -14,11 +14,14 @@ var fs = require("fs");
 var async = require("async");
 var auth = require("./auth/auth");
 var logFilter = require("./filter/logFilter");
+
 var sign = require("./auth/sign");
 
 router.post("/regist",sign({username:true,password:true,timestrap:true,nickName:true,email:false,mobile:false}),regist);
 
 router.post("/email/auth",auth.registAuth(["username","email"]),emailAuth);
+
+
 
 router.post("/email/send",sendEmail);
 
