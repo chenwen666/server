@@ -21,6 +21,7 @@
      "log4js" : "*",
       "redis" : "*",
       "cluster" : "*",
-      "nodemailer" :"*"
+      "nodemailer" :"*",
+      "pm2" : "*"
   }
 }

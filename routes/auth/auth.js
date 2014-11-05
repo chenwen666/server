@@ -79,7 +79,7 @@ module.exports.authLogin = function(req, res, next){
     try {
         var user = req.session.user;
         if (!user) return requestUtils.send(req, res, Code.USERS.NOT_LOGIN);
-        statFilter.set(user.u,"lt",new Date().getTime(),function(){});
+//        statFilter.set(user.u,"lt",new Date().getTime(),function(){});
         next();
     }catch(err){
         log.error("auth.registAuth.authLogin:"+err.stack);
