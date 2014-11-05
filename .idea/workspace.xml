@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71f9aaad-b4c6-4eca-b64b-f9da465fb2c5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/auth/auth.js" afterPath="$PROJECT_DIR$/routes/auth/auth.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/oauth2Route.js" afterPath="$PROJECT_DIR$/routes/oauth2Route.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/access.log-2014-10-31" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/access.log-2014-11-03" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/access.log-2014-11-04" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/child_pid.log" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/processes.json" afterPath="$PROJECT_DIR$/processes.json" />
     </list>
     <ignored path="server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,28 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="StatFilter.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/filter/StatFilter.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="42" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="friendRoute.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/friendRoute.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="334" column="74" selection-start="10256" selection-end="10256" vertical-scroll-proportion="0.0" vertical-offset="6071" max-vertical-offset="6631">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="friendState.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/friendState.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="52" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="361">
+            <state vertical-scroll-proportion="0.0" vertical-offset="5145" max-vertical-offset="5235">
+              <caret line="343" column="0" selection-start-line="343" selection-start-column="0" selection-end-line="343" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -58,7 +43,8 @@
       <file leaf-file-name="test.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="12" selection-start="2786" selection-end="2805" vertical-scroll-proportion="0.0" vertical-offset="1682" max-vertical-offset="2128">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1515" max-vertical-offset="1680">
+              <caret line="101" column="12" selection-start-line="101" selection-start-column="12" selection-end-line="101" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -67,16 +53,18 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="49" selection-start="578" selection-end="578" vertical-scroll-proportion="0.0" vertical-offset="304" max-vertical-offset="722">
+            <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="570">
+              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="oauth2Route.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="oauth2Route.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/oauth2Route.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="106" selection-start="3384" selection-end="3384" vertical-scroll-proportion="0.7211009" vertical-offset="1241" max-vertical-offset="1957">
+            <state vertical-scroll-proportion="0.0" vertical-offset="971" max-vertical-offset="1545">
+              <caret line="93" column="30" selection-start-line="93" selection-start-column="30" selection-end-line="93" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -85,7 +73,8 @@
       <file leaf-file-name="userRouter.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/userRouter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="26" selection-start="821" selection-end="821" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="3230">
+            <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="2550">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -94,16 +83,8 @@
       <file leaf-file-name="auth.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/auth/auth.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="15" selection-start="2540" selection-end="2540" vertical-scroll-proportion="0.0" vertical-offset="1277" max-vertical-offset="2223">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AggregateRoot.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/lib/AggregateRoot.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="143" column="60" selection-start="4684" selection-end="4684" vertical-scroll-proportion="0.0" vertical-offset="627" max-vertical-offset="3097">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1365" max-vertical-offset="1755">
+              <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -112,7 +93,18 @@
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="16" selection-start="538" selection-end="538" vertical-scroll-proportion="-16.285715" vertical-offset="0" max-vertical-offset="608">
+            <state vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="495">
+              <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="processes.json" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/processes.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.44526902" vertical-offset="0" max-vertical-offset="539">
+              <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -149,17 +141,18 @@
         <option value="$PROJECT_DIR$/views/friendState.html" />
         <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/routes/lib/AggregateRoot.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/routes/auth/auth.js" />
         <option value="$PROJECT_DIR$/routes/oauth2Route.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/processes.json" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-2" />
+    <option name="y" value="32" />
+    <option name="width" value="1028" />
+    <option name="height" value="713" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -175,7 +168,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -187,7 +180,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -206,36 +198,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -256,14 +221,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Node.js.Unnamed">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -274,26 +231,32 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
-      <setting name="preferredDebugBrowser" value="CHROME" />
+      <setting name="preferredDebugBrowser" value="Chrome" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
-      <browser start="false" url="" with-js-debugger="false" />
       <method />
     </configuration>
     <configuration default="false" name="Unnamed" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="C:/Program Files/nodejs/node" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
-      <browser start="false" url="" with-js-debugger="false" />
       <RunnerSettings RunnerId="NodeJS.run" />
       <ConfigurationWrapper RunnerId="NodeJS.run" />
       <method />
@@ -312,14 +275,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-8" width="1382" height="744" extended-state="1" />
-    <editor active="true" />
+    <frame x="-2" y="32" width="1028" height="713" extended-state="7" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24597365" sideWeight="0.7215816" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24511719" sideWeight="0.7215816" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -327,11 +290,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -354,112 +317,160 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/routes/friendRoute.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="26" selection-start="1501" selection-end="1501" vertical-scroll-proportion="0.0" vertical-offset="599" max-vertical-offset="1615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/aggregateRootTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="22" selection-start="645" selection-end="645" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="703">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/https.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1919">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/getMap.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="4" selection-start="69" selection-end="369" vertical-scroll-proportion="0.31578946" vertical-offset="0" max-vertical-offset="380">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-3.956298" vertical-offset="1539" max-vertical-offset="2888">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="49" selection-start="578" selection-end="578" vertical-scroll-proportion="0.0" vertical-offset="304" max-vertical-offset="722">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/friendState.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="52" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="361">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4935">
+          <caret line="323" column="0" selection-start-line="323" selection-start-column="0" selection-end-line="323" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="12" selection-start="2786" selection-end="2805" vertical-scroll-proportion="0.0" vertical-offset="1682" max-vertical-offset="2128">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1455" max-vertical-offset="1635">
+          <caret line="97" column="12" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/jade/node_modules/constantinople/node_modules/uglify-js/node_modules/source-map/lib/source-map/array-set.js">
+    <entry file="file://$PROJECT_DIR$/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="36" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.33161953" vertical-offset="631" max-vertical-offset="1957" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="16" selection-start="538" selection-end="538" vertical-scroll-proportion="-16.285715" vertical-offset="0" max-vertical-offset="608">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/lib/AggregateRoot.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="60" selection-start="4684" selection-end="4684" vertical-scroll-proportion="0.0" vertical-offset="627" max-vertical-offset="3097">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/friendRoute.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="334" column="74" selection-start="10256" selection-end="10256" vertical-scroll-proportion="0.0" vertical-offset="6071" max-vertical-offset="6631">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/filter/StatFilter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="42" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/userRouter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="26" selection-start="821" selection-end="821" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="3230">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/auth/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="15" selection-start="2540" selection-end="2540" vertical-scroll-proportion="0.0" vertical-offset="1277" max-vertical-offset="2223">
+        <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="555">
+          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/oauth2Route.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="106" selection-start="3384" selection-end="3384" vertical-scroll-proportion="0.7211009" vertical-offset="1241" max-vertical-offset="1957">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1290" max-vertical-offset="1455">
+          <caret line="86" column="49" selection-start-line="86" selection-start-column="49" selection-end-line="86" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/userRouter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="2505">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/auth/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1230" max-vertical-offset="1605">
+          <caret line="82" column="15" selection-start-line="82" selection-start-column="15" selection-end-line="82" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="465">
+          <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="599" max-vertical-offset="1615">
+          <caret line="43" column="26" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/https.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1919">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/getMap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31578946" vertical-offset="0" max-vertical-offset="380">
+          <caret line="6" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.956298" vertical-offset="1539" max-vertical-offset="2888">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="570">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1515" max-vertical-offset="1680">
+          <caret line="101" column="12" selection-start-line="101" selection-start-column="12" selection-end-line="101" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jade/node_modules/constantinople/node_modules/uglify-js/node_modules/source-map/lib/source-map/array-set.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33161953" vertical-offset="631" max-vertical-offset="1957">
+          <caret line="40" column="36" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/friendRoute.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5145" max-vertical-offset="5235">
+          <caret line="343" column="0" selection-start-line="343" selection-start-column="0" selection-end-line="343" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/userRouter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="2550">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/auth/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1365" max-vertical-offset="1755">
+          <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/oauth2Route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="971" max-vertical-offset="1545">
+          <caret line="93" column="30" selection-start-line="93" selection-start-column="30" selection-end-line="93" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="495">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processes.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44526902" vertical-offset="0" max-vertical-offset="539">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
           <folding />
         </state>
       </provider>
